@@ -1,0 +1,22 @@
+{
+  "architecture": "CIFAR10CNN",
+  "num_classes": 10,
+  "in_channels": 3,
+  "class_names": [
+    "airplane",
+    "automobile",
+    "bird",
+    "cat",
+    "deer",
+    "dog",
+    "frog",
+    "horse",
+    "ship",
+    "truck"
+  ],
+  "dataset": "CIFAR-10",
+  "image_size": 32,
+  "epochs_trained": 10,
+  "batch_size": 64,
+  "learning_rate": 0.001
+}

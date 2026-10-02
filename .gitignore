@@ -1,0 +1,35 @@
+# Virtual environment
+.venv/
+venv/
+
+# Python cache
+__pycache__/
+*.py[cod]
+*.pyo
+
+# Model weights and checkpoints
+*.pth
+*.pt
+*.ckpt
+
+# Datasets and generated challenge data
+data/*
+!data/.gitkeep
+
+# Generated outputs
+experiments/results/*
+experiments/plots/*
+training_curves.png
+
+# Keep folders
+!experiments/results/.gitkeep
+!experiments/plots/.gitkeep
+
+# IDE and OS files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Environment variables
+.env
