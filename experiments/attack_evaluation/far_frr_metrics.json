@@ -1,0 +1,70 @@
+{
+  "summary_counts": {
+    "total_unique_models": 26,
+    "total_evaluation_attempts": 26,
+    "genuine_models": 1,
+    "genuine_attempts": 1,
+    "unauthorized_models": 25,
+    "unauthorized_attempts": 25
+  },
+  "overall": {
+    "total_genuine_attempts": 1,
+    "false_rejections": 0,
+    "frr_numerator": 0,
+    "frr_denominator": 1,
+    "frr": 0.0,
+    "frr_percent": "0.00%",
+    "total_unauthorized_attempts": 25,
+    "false_acceptances": 21,
+    "far_numerator": 21,
+    "far_denominator": 25,
+    "far": 0.84,
+    "far_percent": "84.00%"
+  },
+  "category_breakdown": {
+    "replacement_model": {
+      "unauthorized_models": 1,
+      "unauthorized_attempts": 1,
+      "false_acceptances": 0,
+      "far_numerator": 0,
+      "far_denominator": 1,
+      "far": 0.0,
+      "far_percent": "0.00%"
+    },
+    "weight_perturbations": {
+      "unauthorized_models": 18,
+      "unauthorized_attempts": 18,
+      "false_acceptances": 18,
+      "far_numerator": 18,
+      "far_denominator": 18,
+      "far": 1.0,
+      "far_percent": "100.00%"
+    },
+    "all_pruning_variants": {
+      "unauthorized_models": 6,
+      "unauthorized_attempts": 6,
+      "false_acceptances": 3,
+      "far_numerator": 3,
+      "far_denominator": 6,
+      "far": 0.5,
+      "far_percent": "50.00%"
+    },
+    "severe_pruning_ge_35pct": {
+      "unauthorized_models": 3,
+      "unauthorized_attempts": 3,
+      "false_acceptances": 0,
+      "far_numerator": 0,
+      "far_denominator": 3,
+      "far": 0.0,
+      "far_percent": "0.00%"
+    }
+  },
+  "thresholds_used": {
+    "engine": "Member 3 Baseline (ModelAuthenticator)",
+    "prediction_agreement_threshold": 0.85,
+    "cosine_similarity_threshold": 0.9,
+    "kl_divergence_threshold": 0.15,
+    "rule": "all_metrics (conjunction: agreement >= 0.85 and cosine >= 0.90 and kl <= 0.15)"
+  },
+  "notes": "Genuine attempts evaluate the single positive control model without artificial replicates. Under Member 3's baseline thresholds (Agreement >= 0.85), subtle perturbations (std <= 0.10) retain sufficient classification accuracy to pass, resulting in 18/18 false acceptances for perturbation. In contrast, replacement models (0/1) and severe pruning >= 35% (0/3) are rejected 100% (FAR = 0.00%)."
+}
