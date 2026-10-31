@@ -1,0 +1,2731 @@
+{
+  "metadata": {
+    "title": "Phase 9 Experimental Improved Detection Comparison",
+    "role": "Member 4 \u2013 Model Tampering and Evaluation",
+    "methodology": "Proposal Rank 1 \u2013 Threshold Recalibration via Existing Authenticator Interface",
+    "status": "EXPERIMENTAL_ANALYSIS_NOT_PRODUCTION_THRESHOLDS",
+    "total_model_variants": 26,
+    "genuine_models": 1,
+    "unauthorized_models": 25,
+    "num_challenges": 500,
+    "discrepancies_with_phase8": []
+  },
+  "configurations": {
+    "baseline": {
+      "name": "Baseline (Member 3 Default)",
+      "short_name": "Baseline",
+      "thresholds": {
+        "prediction_threshold": 0.85,
+        "cosine_threshold": 0.9,
+        "kl_threshold": 0.15
+      },
+      "description": "Baseline development defaults: Agr >= 0.85, Cos >= 0.90, KL <= 0.15",
+      "overall": {
+        "genuine_attempts": 1,
+        "false_rejections": 0,
+        "frr_numerator": 0,
+        "frr_denominator": 1,
+        "frr": 0.0,
+        "frr_percent": "0.00%",
+        "unauthorized_attempts": 25,
+        "false_acceptances": 21,
+        "far_numerator": 21,
+        "far_denominator": 25,
+        "far": 0.84,
+        "far_percent": "84.00%"
+      },
+      "category_far": {
+        "replacement_model": {
+          "unauthorized_models": 1,
+          "false_acceptances": 0,
+          "far_numerator": 0,
+          "far_denominator": 1,
+          "far": 0.0,
+          "far_percent": "0.00%"
+        },
+        "weight_perturbations": {
+          "unauthorized_models": 18,
+          "false_acceptances": 18,
+          "far_numerator": 18,
+          "far_denominator": 18,
+          "far": 1.0,
+          "far_percent": "100.00%",
+          "by_noise_strength": {
+            "0.001": {
+              "unauthorized_models": 3,
+              "false_acceptances": 3,
+              "far_numerator": 3,
+              "far_denominator": 3,
+              "far": 1.0,
+              "far_percent": "100.00%"
+            },
+            "0.005": {
+              "unauthorized_models": 3,
+              "false_acceptances": 3,
+              "far_numerator": 3,
+              "far_denominator": 3,
+              "far": 1.0,
+              "far_percent": "100.00%"
+            },
+            "0.01": {
+              "unauthorized_models": 3,
+              "false_acceptances": 3,
+              "far_numerator": 3,
+              "far_denominator": 3,
+              "far": 1.0,
+              "far_percent": "100.00%"
+            },
+            "0.02": {
+              "unauthorized_models": 3,
+              "false_acceptances": 3,
+              "far_numerator": 3,
+              "far_denominator": 3,
+              "far": 1.0,
+              "far_percent": "100.00%"
+            },
+            "0.05": {
+              "unauthorized_models": 3,
+              "false_acceptances": 3,
+              "far_numerator": 3,
+              "far_denominator": 3,
+              "far": 1.0,
+              "far_percent": "100.00%"
+            },
+            "0.1": {
+              "unauthorized_models": 3,
+              "false_acceptances": 3,
+              "far_numerator": 3,
+              "far_denominator": 3,
+              "far": 1.0,
+              "far_percent": "100.00%"
+            }
+          }
+        },
+        "magnitude_pruning": {
+          "unauthorized_models": 6,
+          "false_acceptances": 3,
+          "far_numerator": 3,
+          "far_denominator": 6,
+          "far": 0.5,
+          "far_percent": "50.00%",
+          "by_sparsity": {
+            "0.05": {
+              "unauthorized_models": 1,
+              "false_acceptances": 1,
+              "far_numerator": 1,
+              "far_denominator": 1,
+              "far": 1.0,
+              "far_percent": "100.00%"
+            },
+            "0.1": {
+              "unauthorized_models": 1,
+              "false_acceptances": 1,
+              "far_numerator": 1,
+              "far_denominator": 1,
+              "far": 1.0,
+              "far_percent": "100.00%"
+            },
+            "0.2": {
+              "unauthorized_models": 1,
+              "false_acceptances": 1,
+              "far_numerator": 1,
+              "far_denominator": 1,
+              "far": 1.0,
+              "far_percent": "100.00%"
+            },
+            "0.35": {
+              "unauthorized_models": 1,
+              "false_acceptances": 0,
+              "far_numerator": 0,
+              "far_denominator": 1,
+              "far": 0.0,
+              "far_percent": "0.00%"
+            },
+            "0.5": {
+              "unauthorized_models": 1,
+              "false_acceptances": 0,
+              "far_numerator": 0,
+              "far_denominator": 1,
+              "far": 0.0,
+              "far_percent": "0.00%"
+            },
+            "0.75": {
+              "unauthorized_models": 1,
+              "false_acceptances": 0,
+              "far_numerator": 0,
+              "far_denominator": 1,
+              "far": 0.0,
+              "far_percent": "0.00%"
+            }
+          }
+        }
+      }
+    },
+    "moderate": {
+      "name": "Moderate",
+      "short_name": "Moderate",
+      "thresholds": {
+        "prediction_threshold": 0.95,
+        "cosine_threshold": 0.95,
+        "kl_threshold": 0.05
+      },
+      "description": "Moderate: Agr >= 0.95, Cos >= 0.95, KL <= 0.05",
+      "overall": {
+        "genuine_attempts": 1,
+        "false_rejections": 0,
+        "frr_numerator": 0,
+        "frr_denominator": 1,
+        "frr": 0.0,
+        "frr_percent": "0.00%",
+        "unauthorized_attempts": 25,
+        "false_acceptances": 15,
+        "far_numerator": 15,
+        "far_denominator": 25,
+        "far": 0.6,
+        "far_percent": "60.00%"
+      },
+      "category_far": {
+        "replacement_model": {
+          "unauthorized_models": 1,
+          "false_acceptances": 0,
+          "far_numerator": 0,
+          "far_denominator": 1,
+          "far": 0.0,
+          "far_percent": "0.00%"
+        },
+        "weight_perturbations": {
+          "unauthorized_models": 18,
+          "false_acceptances": 13,
+          "far_numerator": 13,
+          "far_denominator": 18,
+          "far": 0.7222222222222222,
+          "far_percent": "72.22%",
+          "by_noise_strength": {
+            "0.001": {
+              "unauthorized_models": 3,
+              "false_acceptances": 3,
+              "far_numerator": 3,
+              "far_denominator": 3,
+              "far": 1.0,
+              "far_percent": "100.00%"
+            },
+            "0.005": {
+              "unauthorized_models": 3,
+              "false_acceptances": 3,
+              "far_numerator": 3,
+              "far_denominator": 3,
+              "far": 1.0,
+              "far_percent": "100.00%"
+            },
+            "0.01": {
+              "unauthorized_models": 3,
+              "false_acceptances": 3,
+              "far_numerator": 3,
+              "far_denominator": 3,
+              "far": 1.0,
+              "far_percent": "100.00%"
+            },
+            "0.02": {
+              "unauthorized_models": 3,
+              "false_acceptances": 3,
+              "far_numerator": 3,
+              "far_denominator": 3,
+              "far": 1.0,
+              "far_percent": "100.00%"
+            },
+            "0.05": {
+              "unauthorized_models": 3,
+              "false_acceptances": 1,
+              "far_numerator": 1,
+              "far_denominator": 3,
+              "far": 0.3333333333333333,
+              "far_percent": "33.33%"
+            },
+            "0.1": {
+              "unauthorized_models": 3,
+              "false_acceptances": 0,
+              "far_numerator": 0,
+              "far_denominator": 3,
+              "far": 0.0,
+              "far_percent": "0.00%"
+            }
+          }
+        },
+        "magnitude_pruning": {
+          "unauthorized_models": 6,
+          "false_acceptances": 2,
+          "far_numerator": 2,
+          "far_denominator": 6,
+          "far": 0.3333333333333333,
+          "far_percent": "33.33%",
+          "by_sparsity": {
+            "0.05": {
+              "unauthorized_models": 1,
+              "false_acceptances": 1,
+              "far_numerator": 1,
+              "far_denominator": 1,
+              "far": 1.0,
+              "far_percent": "100.00%"
+            },
+            "0.1": {
+              "unauthorized_models": 1,
+              "false_acceptances": 1,
+              "far_numerator": 1,
+              "far_denominator": 1,
+              "far": 1.0,
+              "far_percent": "100.00%"
+            },
+            "0.2": {
+              "unauthorized_models": 1,
+              "false_acceptances": 0,
+              "far_numerator": 0,
+              "far_denominator": 1,
+              "far": 0.0,
+              "far_percent": "0.00%"
+            },
+            "0.35": {
+              "unauthorized_models": 1,
+              "false_acceptances": 0,
+              "far_numerator": 0,
+              "far_denominator": 1,
+              "far": 0.0,
+              "far_percent": "0.00%"
+            },
+            "0.5": {
+              "unauthorized_models": 1,
+              "false_acceptances": 0,
+              "far_numerator": 0,
+              "far_denominator": 1,
+              "far": 0.0,
+              "far_percent": "0.00%"
+            },
+            "0.75": {
+              "unauthorized_models": 1,
+              "false_acceptances": 0,
+              "far_numerator": 0,
+              "far_denominator": 1,
+              "far": 0.0,
+              "far_percent": "0.00%"
+            }
+          }
+        }
+      }
+    },
+    "balanced": {
+      "name": "Balanced",
+      "short_name": "Balanced",
+      "thresholds": {
+        "prediction_threshold": 0.98,
+        "cosine_threshold": 0.99,
+        "kl_threshold": 0.01
+      },
+      "description": "Balanced: Agr >= 0.98, Cos >= 0.99, KL <= 0.01",
+      "overall": {
+        "genuine_attempts": 1,
+        "false_rejections": 0,
+        "frr_numerator": 0,
+        "frr_denominator": 1,
+        "frr": 0.0,
+        "frr_percent": "0.00%",
+        "unauthorized_attempts": 25,
+        "false_acceptances": 11,
+        "far_numerator": 11,
+        "far_denominator": 25,
+        "far": 0.44,
+        "far_percent": "44.00%"
+      },
+      "category_far": {
+        "replacement_model": {
+          "unauthorized_models": 1,
+          "false_acceptances": 0,
+          "far_numerator": 0,
+          "far_denominator": 1,
+          "far": 0.0,
+          "far_percent": "0.00%"
+        },
+        "weight_perturbations": {
+          "unauthorized_models": 18,
+          "false_acceptances": 9,
+          "far_numerator": 9,
+          "far_denominator": 18,
+          "far": 0.5,
+          "far_percent": "50.00%",
+          "by_noise_strength": {
+            "0.001": {
+              "unauthorized_models": 3,
+              "false_acceptances": 3,
+              "far_numerator": 3,
+              "far_denominator": 3,
+              "far": 1.0,
+              "far_percent": "100.00%"
+            },
+            "0.005": {
+              "unauthorized_models": 3,
+              "false_acceptances": 3,
+              "far_numerator": 3,
+              "far_denominator": 3,
+              "far": 1.0,
+              "far_percent": "100.00%"
+            },
+            "0.01": {
+              "unauthorized_models": 3,
+              "false_acceptances": 3,
+              "far_numerator": 3,
+              "far_denominator": 3,
+              "far": 1.0,
+              "far_percent": "100.00%"
+            },
+            "0.02": {
+              "unauthorized_models": 3,
+              "false_acceptances": 0,
+              "far_numerator": 0,
+              "far_denominator": 3,
+              "far": 0.0,
+              "far_percent": "0.00%"
+            },
+            "0.05": {
+              "unauthorized_models": 3,
+              "false_acceptances": 0,
+              "far_numerator": 0,
+              "far_denominator": 3,
+              "far": 0.0,
+              "far_percent": "0.00%"
+            },
+            "0.1": {
+              "unauthorized_models": 3,
+              "false_acceptances": 0,
+              "far_numerator": 0,
+              "far_denominator": 3,
+              "far": 0.0,
+              "far_percent": "0.00%"
+            }
+          }
+        },
+        "magnitude_pruning": {
+          "unauthorized_models": 6,
+          "false_acceptances": 2,
+          "far_numerator": 2,
+          "far_denominator": 6,
+          "far": 0.3333333333333333,
+          "far_percent": "33.33%",
+          "by_sparsity": {
+            "0.05": {
+              "unauthorized_models": 1,
+              "false_acceptances": 1,
+              "far_numerator": 1,
+              "far_denominator": 1,
+              "far": 1.0,
+              "far_percent": "100.00%"
+            },
+            "0.1": {
+              "unauthorized_models": 1,
+              "false_acceptances": 1,
+              "far_numerator": 1,
+              "far_denominator": 1,
+              "far": 1.0,
+              "far_percent": "100.00%"
+            },
+            "0.2": {
+              "unauthorized_models": 1,
+              "false_acceptances": 0,
+              "far_numerator": 0,
+              "far_denominator": 1,
+              "far": 0.0,
+              "far_percent": "0.00%"
+            },
+            "0.35": {
+              "unauthorized_models": 1,
+              "false_acceptances": 0,
+              "far_numerator": 0,
+              "far_denominator": 1,
+              "far": 0.0,
+              "far_percent": "0.00%"
+            },
+            "0.5": {
+              "unauthorized_models": 1,
+              "false_acceptances": 0,
+              "far_numerator": 0,
+              "far_denominator": 1,
+              "far": 0.0,
+              "far_percent": "0.00%"
+            },
+            "0.75": {
+              "unauthorized_models": 1,
+              "false_acceptances": 0,
+              "far_numerator": 0,
+              "far_denominator": 1,
+              "far": 0.0,
+              "far_percent": "0.00%"
+            }
+          }
+        }
+      }
+    },
+    "strict": {
+      "name": "Strict",
+      "short_name": "Strict",
+      "thresholds": {
+        "prediction_threshold": 0.99,
+        "cosine_threshold": 0.99,
+        "kl_threshold": 0.001
+      },
+      "description": "Strict: Agr >= 0.99, Cos >= 0.99, KL <= 0.001",
+      "overall": {
+        "genuine_attempts": 1,
+        "false_rejections": 0,
+        "frr_numerator": 0,
+        "frr_denominator": 1,
+        "frr": 0.0,
+        "frr_percent": "0.00%",
+        "unauthorized_attempts": 25,
+        "false_acceptances": 6,
+        "far_numerator": 6,
+        "far_denominator": 25,
+        "far": 0.24,
+        "far_percent": "24.00%"
+      },
+      "category_far": {
+        "replacement_model": {
+          "unauthorized_models": 1,
+          "false_acceptances": 0,
+          "far_numerator": 0,
+          "far_denominator": 1,
+          "far": 0.0,
+          "far_percent": "0.00%"
+        },
+        "weight_perturbations": {
+          "unauthorized_models": 18,
+          "false_acceptances": 6,
+          "far_numerator": 6,
+          "far_denominator": 18,
+          "far": 0.3333333333333333,
+          "far_percent": "33.33%",
+          "by_noise_strength": {
+            "0.001": {
+              "unauthorized_models": 3,
+              "false_acceptances": 3,
+              "far_numerator": 3,
+              "far_denominator": 3,
+              "far": 1.0,
+              "far_percent": "100.00%"
+            },
+            "0.005": {
+              "unauthorized_models": 3,
+              "false_acceptances": 3,
+              "far_numerator": 3,
+              "far_denominator": 3,
+              "far": 1.0,
+              "far_percent": "100.00%"
+            },
+            "0.01": {
+              "unauthorized_models": 3,
+              "false_acceptances": 0,
+              "far_numerator": 0,
+              "far_denominator": 3,
+              "far": 0.0,
+              "far_percent": "0.00%"
+            },
+            "0.02": {
+              "unauthorized_models": 3,
+              "false_acceptances": 0,
+              "far_numerator": 0,
+              "far_denominator": 3,
+              "far": 0.0,
+              "far_percent": "0.00%"
+            },
+            "0.05": {
+              "unauthorized_models": 3,
+              "false_acceptances": 0,
+              "far_numerator": 0,
+              "far_denominator": 3,
+              "far": 0.0,
+              "far_percent": "0.00%"
+            },
+            "0.1": {
+              "unauthorized_models": 3,
+              "false_acceptances": 0,
+              "far_numerator": 0,
+              "far_denominator": 3,
+              "far": 0.0,
+              "far_percent": "0.00%"
+            }
+          }
+        },
+        "magnitude_pruning": {
+          "unauthorized_models": 6,
+          "false_acceptances": 0,
+          "far_numerator": 0,
+          "far_denominator": 6,
+          "far": 0.0,
+          "far_percent": "0.00%",
+          "by_sparsity": {
+            "0.05": {
+              "unauthorized_models": 1,
+              "false_acceptances": 0,
+              "far_numerator": 0,
+              "far_denominator": 1,
+              "far": 0.0,
+              "far_percent": "0.00%"
+            },
+            "0.1": {
+              "unauthorized_models": 1,
+              "false_acceptances": 0,
+              "far_numerator": 0,
+              "far_denominator": 1,
+              "far": 0.0,
+              "far_percent": "0.00%"
+            },
+            "0.2": {
+              "unauthorized_models": 1,
+              "false_acceptances": 0,
+              "far_numerator": 0,
+              "far_denominator": 1,
+              "far": 0.0,
+              "far_percent": "0.00%"
+            },
+            "0.35": {
+              "unauthorized_models": 1,
+              "false_acceptances": 0,
+              "far_numerator": 0,
+              "far_denominator": 1,
+              "far": 0.0,
+              "far_percent": "0.00%"
+            },
+            "0.5": {
+              "unauthorized_models": 1,
+              "false_acceptances": 0,
+              "far_numerator": 0,
+              "far_denominator": 1,
+              "far": 0.0,
+              "far_percent": "0.00%"
+            },
+            "0.75": {
+              "unauthorized_models": 1,
+              "false_acceptances": 0,
+              "far_numerator": 0,
+              "far_denominator": 1,
+              "far": 0.0,
+              "far_percent": "0.00%"
+            }
+          }
+        }
+      }
+    },
+    "high_sensitivity": {
+      "name": "High-Sensitivity",
+      "short_name": "High-Sens",
+      "thresholds": {
+        "prediction_threshold": 0.99,
+        "cosine_threshold": 0.999,
+        "kl_threshold": 0.0001
+      },
+      "description": "High-Sensitivity: Agr >= 0.99, Cos >= 0.999, KL <= 0.0001",
+      "overall": {
+        "genuine_attempts": 1,
+        "false_rejections": 0,
+        "frr_numerator": 0,
+        "frr_denominator": 1,
+        "frr": 0.0,
+        "frr_percent": "0.00%",
+        "unauthorized_attempts": 25,
+        "false_acceptances": 4,
+        "far_numerator": 4,
+        "far_denominator": 25,
+        "far": 0.16,
+        "far_percent": "16.00%"
+      },
+      "category_far": {
+        "replacement_model": {
+          "unauthorized_models": 1,
+          "false_acceptances": 0,
+          "far_numerator": 0,
+          "far_denominator": 1,
+          "far": 0.0,
+          "far_percent": "0.00%"
+        },
+        "weight_perturbations": {
+          "unauthorized_models": 18,
+          "false_acceptances": 4,
+          "far_numerator": 4,
+          "far_denominator": 18,
+          "far": 0.2222222222222222,
+          "far_percent": "22.22%",
+          "by_noise_strength": {
+            "0.001": {
+              "unauthorized_models": 3,
+              "false_acceptances": 3,
+              "far_numerator": 3,
+              "far_denominator": 3,
+              "far": 1.0,
+              "far_percent": "100.00%"
+            },
+            "0.005": {
+              "unauthorized_models": 3,
+              "false_acceptances": 1,
+              "far_numerator": 1,
+              "far_denominator": 3,
+              "far": 0.3333333333333333,
+              "far_percent": "33.33%"
+            },
+            "0.01": {
+              "unauthorized_models": 3,
+              "false_acceptances": 0,
+              "far_numerator": 0,
+              "far_denominator": 3,
+              "far": 0.0,
+              "far_percent": "0.00%"
+            },
+            "0.02": {
+              "unauthorized_models": 3,
+              "false_acceptances": 0,
+              "far_numerator": 0,
+              "far_denominator": 3,
+              "far": 0.0,
+              "far_percent": "0.00%"
+            },
+            "0.05": {
+              "unauthorized_models": 3,
+              "false_acceptances": 0,
+              "far_numerator": 0,
+              "far_denominator": 3,
+              "far": 0.0,
+              "far_percent": "0.00%"
+            },
+            "0.1": {
+              "unauthorized_models": 3,
+              "false_acceptances": 0,
+              "far_numerator": 0,
+              "far_denominator": 3,
+              "far": 0.0,
+              "far_percent": "0.00%"
+            }
+          }
+        },
+        "magnitude_pruning": {
+          "unauthorized_models": 6,
+          "false_acceptances": 0,
+          "far_numerator": 0,
+          "far_denominator": 6,
+          "far": 0.0,
+          "far_percent": "0.00%",
+          "by_sparsity": {
+            "0.05": {
+              "unauthorized_models": 1,
+              "false_acceptances": 0,
+              "far_numerator": 0,
+              "far_denominator": 1,
+              "far": 0.0,
+              "far_percent": "0.00%"
+            },
+            "0.1": {
+              "unauthorized_models": 1,
+              "false_acceptances": 0,
+              "far_numerator": 0,
+              "far_denominator": 1,
+              "far": 0.0,
+              "far_percent": "0.00%"
+            },
+            "0.2": {
+              "unauthorized_models": 1,
+              "false_acceptances": 0,
+              "far_numerator": 0,
+              "far_denominator": 1,
+              "far": 0.0,
+              "far_percent": "0.00%"
+            },
+            "0.35": {
+              "unauthorized_models": 1,
+              "false_acceptances": 0,
+              "far_numerator": 0,
+              "far_denominator": 1,
+              "far": 0.0,
+              "far_percent": "0.00%"
+            },
+            "0.5": {
+              "unauthorized_models": 1,
+              "false_acceptances": 0,
+              "far_numerator": 0,
+              "far_denominator": 1,
+              "far": 0.0,
+              "far_percent": "0.00%"
+            },
+            "0.75": {
+              "unauthorized_models": 1,
+              "false_acceptances": 0,
+              "far_numerator": 0,
+              "far_denominator": 1,
+              "far": 0.0,
+              "far_percent": "0.00%"
+            }
+          }
+        }
+      }
+    },
+    "ultra_sensitive": {
+      "name": "Ultra-Sensitive",
+      "short_name": "Ultra-Sens",
+      "thresholds": {
+        "prediction_threshold": 0.99,
+        "cosine_threshold": 0.9999,
+        "kl_threshold": 1e-05
+      },
+      "description": "Ultra-Sensitive: Agr >= 0.99, Cos >= 0.9999, KL <= 0.00001",
+      "overall": {
+        "genuine_attempts": 1,
+        "false_rejections": 0,
+        "frr_numerator": 0,
+        "frr_denominator": 1,
+        "frr": 0.0,
+        "frr_percent": "0.00%",
+        "unauthorized_attempts": 25,
+        "false_acceptances": 3,
+        "far_numerator": 3,
+        "far_denominator": 25,
+        "far": 0.12,
+        "far_percent": "12.00%"
+      },
+      "category_far": {
+        "replacement_model": {
+          "unauthorized_models": 1,
+          "false_acceptances": 0,
+          "far_numerator": 0,
+          "far_denominator": 1,
+          "far": 0.0,
+          "far_percent": "0.00%"
+        },
+        "weight_perturbations": {
+          "unauthorized_models": 18,
+          "false_acceptances": 3,
+          "far_numerator": 3,
+          "far_denominator": 18,
+          "far": 0.16666666666666666,
+          "far_percent": "16.67%",
+          "by_noise_strength": {
+            "0.001": {
+              "unauthorized_models": 3,
+              "false_acceptances": 3,
+              "far_numerator": 3,
+              "far_denominator": 3,
+              "far": 1.0,
+              "far_percent": "100.00%"
+            },
+            "0.005": {
+              "unauthorized_models": 3,
+              "false_acceptances": 0,
+              "far_numerator": 0,
+              "far_denominator": 3,
+              "far": 0.0,
+              "far_percent": "0.00%"
+            },
+            "0.01": {
+              "unauthorized_models": 3,
+              "false_acceptances": 0,
+              "far_numerator": 0,
+              "far_denominator": 3,
+              "far": 0.0,
+              "far_percent": "0.00%"
+            },
+            "0.02": {
+              "unauthorized_models": 3,
+              "false_acceptances": 0,
+              "far_numerator": 0,
+              "far_denominator": 3,
+              "far": 0.0,
+              "far_percent": "0.00%"
+            },
+            "0.05": {
+              "unauthorized_models": 3,
+              "false_acceptances": 0,
+              "far_numerator": 0,
+              "far_denominator": 3,
+              "far": 0.0,
+              "far_percent": "0.00%"
+            },
+            "0.1": {
+              "unauthorized_models": 3,
+              "false_acceptances": 0,
+              "far_numerator": 0,
+              "far_denominator": 3,
+              "far": 0.0,
+              "far_percent": "0.00%"
+            }
+          }
+        },
+        "magnitude_pruning": {
+          "unauthorized_models": 6,
+          "false_acceptances": 0,
+          "far_numerator": 0,
+          "far_denominator": 6,
+          "far": 0.0,
+          "far_percent": "0.00%",
+          "by_sparsity": {
+            "0.05": {
+              "unauthorized_models": 1,
+              "false_acceptances": 0,
+              "far_numerator": 0,
+              "far_denominator": 1,
+              "far": 0.0,
+              "far_percent": "0.00%"
+            },
+            "0.1": {
+              "unauthorized_models": 1,
+              "false_acceptances": 0,
+              "far_numerator": 0,
+              "far_denominator": 1,
+              "far": 0.0,
+              "far_percent": "0.00%"
+            },
+            "0.2": {
+              "unauthorized_models": 1,
+              "false_acceptances": 0,
+              "far_numerator": 0,
+              "far_denominator": 1,
+              "far": 0.0,
+              "far_percent": "0.00%"
+            },
+            "0.35": {
+              "unauthorized_models": 1,
+              "false_acceptances": 0,
+              "far_numerator": 0,
+              "far_denominator": 1,
+              "far": 0.0,
+              "far_percent": "0.00%"
+            },
+            "0.5": {
+              "unauthorized_models": 1,
+              "false_acceptances": 0,
+              "far_numerator": 0,
+              "far_denominator": 1,
+              "far": 0.0,
+              "far_percent": "0.00%"
+            },
+            "0.75": {
+              "unauthorized_models": 1,
+              "false_acceptances": 0,
+              "far_numerator": 0,
+              "far_denominator": 1,
+              "far": 0.0,
+              "far_percent": "0.00%"
+            }
+          }
+        }
+      }
+    },
+    "zero_tolerance": {
+      "name": "Zero-Tolerance Candidate",
+      "short_name": "Zero-Tol",
+      "thresholds": {
+        "prediction_threshold": 0.999,
+        "cosine_threshold": 0.9999,
+        "kl_threshold": 1e-06
+      },
+      "description": "Zero-Tolerance Candidate: Agr >= 0.999, Cos >= 0.9999, KL <= 0.000001",
+      "overall": {
+        "genuine_attempts": 1,
+        "false_rejections": 0,
+        "frr_numerator": 0,
+        "frr_denominator": 1,
+        "frr": 0.0,
+        "frr_percent": "0.00%",
+        "unauthorized_attempts": 25,
+        "false_acceptances": 0,
+        "far_numerator": 0,
+        "far_denominator": 25,
+        "far": 0.0,
+        "far_percent": "0.00%"
+      },
+      "category_far": {
+        "replacement_model": {
+          "unauthorized_models": 1,
+          "false_acceptances": 0,
+          "far_numerator": 0,
+          "far_denominator": 1,
+          "far": 0.0,
+          "far_percent": "0.00%"
+        },
+        "weight_perturbations": {
+          "unauthorized_models": 18,
+          "false_acceptances": 0,
+          "far_numerator": 0,
+          "far_denominator": 18,
+          "far": 0.0,
+          "far_percent": "0.00%",
+          "by_noise_strength": {
+            "0.001": {
+              "unauthorized_models": 3,
+              "false_acceptances": 0,
+              "far_numerator": 0,
+              "far_denominator": 3,
+              "far": 0.0,
+              "far_percent": "0.00%"
+            },
+            "0.005": {
+              "unauthorized_models": 3,
+              "false_acceptances": 0,
+              "far_numerator": 0,
+              "far_denominator": 3,
+              "far": 0.0,
+              "far_percent": "0.00%"
+            },
+            "0.01": {
+              "unauthorized_models": 3,
+              "false_acceptances": 0,
+              "far_numerator": 0,
+              "far_denominator": 3,
+              "far": 0.0,
+              "far_percent": "0.00%"
+            },
+            "0.02": {
+              "unauthorized_models": 3,
+              "false_acceptances": 0,
+              "far_numerator": 0,
+              "far_denominator": 3,
+              "far": 0.0,
+              "far_percent": "0.00%"
+            },
+            "0.05": {
+              "unauthorized_models": 3,
+              "false_acceptances": 0,
+              "far_numerator": 0,
+              "far_denominator": 3,
+              "far": 0.0,
+              "far_percent": "0.00%"
+            },
+            "0.1": {
+              "unauthorized_models": 3,
+              "false_acceptances": 0,
+              "far_numerator": 0,
+              "far_denominator": 3,
+              "far": 0.0,
+              "far_percent": "0.00%"
+            }
+          }
+        },
+        "magnitude_pruning": {
+          "unauthorized_models": 6,
+          "false_acceptances": 0,
+          "far_numerator": 0,
+          "far_denominator": 6,
+          "far": 0.0,
+          "far_percent": "0.00%",
+          "by_sparsity": {
+            "0.05": {
+              "unauthorized_models": 1,
+              "false_acceptances": 0,
+              "far_numerator": 0,
+              "far_denominator": 1,
+              "far": 0.0,
+              "far_percent": "0.00%"
+            },
+            "0.1": {
+              "unauthorized_models": 1,
+              "false_acceptances": 0,
+              "far_numerator": 0,
+              "far_denominator": 1,
+              "far": 0.0,
+              "far_percent": "0.00%"
+            },
+            "0.2": {
+              "unauthorized_models": 1,
+              "false_acceptances": 0,
+              "far_numerator": 0,
+              "far_denominator": 1,
+              "far": 0.0,
+              "far_percent": "0.00%"
+            },
+            "0.35": {
+              "unauthorized_models": 1,
+              "false_acceptances": 0,
+              "far_numerator": 0,
+              "far_denominator": 1,
+              "far": 0.0,
+              "far_percent": "0.00%"
+            },
+            "0.5": {
+              "unauthorized_models": 1,
+              "false_acceptances": 0,
+              "far_numerator": 0,
+              "far_denominator": 1,
+              "far": 0.0,
+              "far_percent": "0.00%"
+            },
+            "0.75": {
+              "unauthorized_models": 1,
+              "false_acceptances": 0,
+              "far_numerator": 0,
+              "far_denominator": 1,
+              "far": 0.0,
+              "far_percent": "0.00%"
+            }
+          }
+        }
+      }
+    }
+  },
+  "variant_evaluations": [
+    {
+      "variant_id": "genuine_original",
+      "category": "positive_control",
+      "ground_truth": "genuine",
+      "parameter_name": "none",
+      "parameter_value": 0.0,
+      "seed": null,
+      "prediction_agreement": 1.0,
+      "cosine_similarity": 0.9999999806135974,
+      "kl_divergence": 3.9772486245529695e-08,
+      "matching_predictions": 500,
+      "mismatching_predictions": 0,
+      "decisions": {
+        "baseline": {
+          "prediction_pass": true,
+          "cosine_pass": true,
+          "kl_pass": true,
+          "authenticated": true,
+          "decision_outcome": "true_acceptance"
+        },
+        "moderate": {
+          "prediction_pass": true,
+          "cosine_pass": true,
+          "kl_pass": true,
+          "authenticated": true,
+          "decision_outcome": "true_acceptance"
+        },
+        "balanced": {
+          "prediction_pass": true,
+          "cosine_pass": true,
+          "kl_pass": true,
+          "authenticated": true,
+          "decision_outcome": "true_acceptance"
+        },
+        "strict": {
+          "prediction_pass": true,
+          "cosine_pass": true,
+          "kl_pass": true,
+          "authenticated": true,
+          "decision_outcome": "true_acceptance"
+        },
+        "high_sensitivity": {
+          "prediction_pass": true,
+          "cosine_pass": true,
+          "kl_pass": true,
+          "authenticated": true,
+          "decision_outcome": "true_acceptance"
+        },
+        "ultra_sensitive": {
+          "prediction_pass": true,
+          "cosine_pass": true,
+          "kl_pass": true,
+          "authenticated": true,
+          "decision_outcome": "true_acceptance"
+        },
+        "zero_tolerance": {
+          "prediction_pass": true,
+          "cosine_pass": true,
+          "kl_pass": true,
+          "authenticated": true,
+          "decision_outcome": "true_acceptance"
+        }
+      }
+    },
+    {
+      "variant_id": "different_seed_model",
+      "category": "impostor_replacement",
+      "ground_truth": "unauthorized",
+      "parameter_name": "seed",
+      "parameter_value": 123.0,
+      "seed": 123,
+      "prediction_agreement": 0.738,
+      "cosine_similarity": 0.9121812395265994,
+      "kl_divergence": 0.22519248839252298,
+      "matching_predictions": 369,
+      "mismatching_predictions": 131,
+      "decisions": {
+        "baseline": {
+          "prediction_pass": false,
+          "cosine_pass": true,
+          "kl_pass": false,
+          "authenticated": false,
+          "decision_outcome": "true_rejection"
+        },
+        "moderate": {
+          "prediction_pass": false,
+          "cosine_pass": false,
+          "kl_pass": false,
+          "authenticated": false,
+          "decision_outcome": "true_rejection"
+        },
+        "balanced": {
+          "prediction_pass": false,
+          "cosine_pass": false,
+          "kl_pass": false,
+          "authenticated": false,
+          "decision_outcome": "true_rejection"
+        },
+        "strict": {
+          "prediction_pass": false,
+          "cosine_pass": false,
+          "kl_pass": false,
+          "authenticated": false,
+          "decision_outcome": "true_rejection"
+        },
+        "high_sensitivity": {
+          "prediction_pass": false,
+          "cosine_pass": false,
+          "kl_pass": false,
+          "authenticated": false,
+          "decision_outcome": "true_rejection"
+        },
+        "ultra_sensitive": {
+          "prediction_pass": false,
+          "cosine_pass": false,
+          "kl_pass": false,
+          "authenticated": false,
+          "decision_outcome": "true_rejection"
+        },
+        "zero_tolerance": {
+          "prediction_pass": false,
+          "cosine_pass": false,
+          "kl_pass": false,
+          "authenticated": false,
+          "decision_outcome": "true_rejection"
+        }
+      }
+    },
+    {
+      "variant_id": "perturb_std_0.001_seed_42",
+      "category": "weight_perturbation",
+      "ground_truth": "unauthorized",
+      "parameter_name": "noise_std",
+      "parameter_value": 0.001,
+      "seed": 42,
+      "prediction_agreement": 1.0,
+      "cosine_similarity": 0.9999976293699149,
+      "kl_divergence": 3.974418245996396e-06,
+      "matching_predictions": 500,
+      "mismatching_predictions": 0,
+      "decisions": {
+        "baseline": {
+          "prediction_pass": true,
+          "cosine_pass": true,
+          "kl_pass": true,
+          "authenticated": true,
+          "decision_outcome": "false_acceptance"
+        },
+        "moderate": {
+          "prediction_pass": true,
+          "cosine_pass": true,
+          "kl_pass": true,
+          "authenticated": true,
+          "decision_outcome": "false_acceptance"
+        },
+        "balanced": {
+          "prediction_pass": true,
+          "cosine_pass": true,
+          "kl_pass": true,
+          "authenticated": true,
+          "decision_outcome": "false_acceptance"
+        },
+        "strict": {
+          "prediction_pass": true,
+          "cosine_pass": true,
+          "kl_pass": true,
+          "authenticated": true,
+          "decision_outcome": "false_acceptance"
+        },
+        "high_sensitivity": {
+          "prediction_pass": true,
+          "cosine_pass": true,
+          "kl_pass": true,
+          "authenticated": true,
+          "decision_outcome": "false_acceptance"
+        },
+        "ultra_sensitive": {
+          "prediction_pass": true,
+          "cosine_pass": true,
+          "kl_pass": true,
+          "authenticated": true,
+          "decision_outcome": "false_acceptance"
+        },
+        "zero_tolerance": {
+          "prediction_pass": true,
+          "cosine_pass": true,
+          "kl_pass": false,
+          "authenticated": false,
+          "decision_outcome": "true_rejection"
+        }
+      }
+    },
+    {
+      "variant_id": "perturb_std_0.001_seed_43",
+      "category": "weight_perturbation",
+      "ground_truth": "unauthorized",
+      "parameter_name": "noise_std",
+      "parameter_value": 0.001,
+      "seed": 43,
+      "prediction_agreement": 1.0,
+      "cosine_similarity": 0.9999982478327931,
+      "kl_divergence": 3.3639914983977474e-06,
+      "matching_predictions": 500,
+      "mismatching_predictions": 0,
+      "decisions": {
+        "baseline": {
+          "prediction_pass": true,
+          "cosine_pass": true,
+          "kl_pass": true,
+          "authenticated": true,
+          "decision_outcome": "false_acceptance"
+        },
+        "moderate": {
+          "prediction_pass": true,
+          "cosine_pass": true,
+          "kl_pass": true,
+          "authenticated": true,
+          "decision_outcome": "false_acceptance"
+        },
+        "balanced": {
+          "prediction_pass": true,
+          "cosine_pass": true,
+          "kl_pass": true,
+          "authenticated": true,
+          "decision_outcome": "false_acceptance"
+        },
+        "strict": {
+          "prediction_pass": true,
+          "cosine_pass": true,
+          "kl_pass": true,
+          "authenticated": true,
+          "decision_outcome": "false_acceptance"
+        },
+        "high_sensitivity": {
+          "prediction_pass": true,
+          "cosine_pass": true,
+          "kl_pass": true,
+          "authenticated": true,
+          "decision_outcome": "false_acceptance"
+        },
+        "ultra_sensitive": {
+          "prediction_pass": true,
+          "cosine_pass": true,
+          "kl_pass": true,
+          "authenticated": true,
+          "decision_outcome": "false_acceptance"
+        },
+        "zero_tolerance": {
+          "prediction_pass": true,
+          "cosine_pass": true,
+          "kl_pass": false,
+          "authenticated": false,
+          "decision_outcome": "true_rejection"
+        }
+      }
+    },
+    {
+      "variant_id": "perturb_std_0.001_seed_44",
+      "category": "weight_perturbation",
+      "ground_truth": "unauthorized",
+      "parameter_name": "noise_std",
+      "parameter_value": 0.001,
+      "seed": 44,
+      "prediction_agreement": 1.0,
+      "cosine_similarity": 0.999997527969388,
+      "kl_divergence": 4.864372077421614e-06,
+      "matching_predictions": 500,
+      "mismatching_predictions": 0,
+      "decisions": {
+        "baseline": {
+          "prediction_pass": true,
+          "cosine_pass": true,
+          "kl_pass": true,
+          "authenticated": true,
+          "decision_outcome": "false_acceptance"
+        },
+        "moderate": {
+          "prediction_pass": true,
+          "cosine_pass": true,
+          "kl_pass": true,
+          "authenticated": true,
+          "decision_outcome": "false_acceptance"
+        },
+        "balanced": {
+          "prediction_pass": true,
+          "cosine_pass": true,
+          "kl_pass": true,
+          "authenticated": true,
+          "decision_outcome": "false_acceptance"
+        },
+        "strict": {
+          "prediction_pass": true,
+          "cosine_pass": true,
+          "kl_pass": true,
+          "authenticated": true,
+          "decision_outcome": "false_acceptance"
+        },
+        "high_sensitivity": {
+          "prediction_pass": true,
+          "cosine_pass": true,
+          "kl_pass": true,
+          "authenticated": true,
+          "decision_outcome": "false_acceptance"
+        },
+        "ultra_sensitive": {
+          "prediction_pass": true,
+          "cosine_pass": true,
+          "kl_pass": true,
+          "authenticated": true,
+          "decision_outcome": "false_acceptance"
+        },
+        "zero_tolerance": {
+          "prediction_pass": true,
+          "cosine_pass": true,
+          "kl_pass": false,
+          "authenticated": false,
+          "decision_outcome": "true_rejection"
+        }
+      }
+    },
+    {
+      "variant_id": "perturb_std_0.005_seed_42",
+      "category": "weight_perturbation",
+      "ground_truth": "unauthorized",
+      "parameter_name": "noise_std",
+      "parameter_value": 0.005,
+      "seed": 42,
+      "prediction_agreement": 0.998,
+      "cosine_similarity": 0.9999388929018876,
+      "kl_divergence": 0.00010188702126174269,
+      "matching_predictions": 499,
+      "mismatching_predictions": 1,
+      "decisions": {
+        "baseline": {
+          "prediction_pass": true,
+          "cosine_pass": true,
+          "kl_pass": true,
+          "authenticated": true,
+          "decision_outcome": "false_acceptance"
+        },
+        "moderate": {
+          "prediction_pass": true,
+          "cosine_pass": true,
+          "kl_pass": true,
+          "authenticated": true,
+          "decision_outcome": "false_acceptance"
+        },
+        "balanced": {
+          "prediction_pass": true,
+          "cosine_pass": true,
+          "kl_pass": true,
+          "authenticated": true,
+          "decision_outcome": "false_acceptance"
+        },
+        "strict": {
+          "prediction_pass": true,
+          "cosine_pass": true,
+          "kl_pass": true,
+          "authenticated": true,
+          "decision_outcome": "false_acceptance"
+        },
+        "high_sensitivity": {
+          "prediction_pass": true,
+          "cosine_pass": true,
+          "kl_pass": false,
+          "authenticated": false,
+          "decision_outcome": "true_rejection"
+        },
+        "ultra_sensitive": {
+          "prediction_pass": true,
+          "cosine_pass": true,
+          "kl_pass": false,
+          "authenticated": false,
+          "decision_outcome": "true_rejection"
+        },
+        "zero_tolerance": {
+          "prediction_pass": false,
+          "cosine_pass": true,
+          "kl_pass": false,
+          "authenticated": false,
+          "decision_outcome": "true_rejection"
+        }
+      }
+    },
+    {
+      "variant_id": "perturb_std_0.005_seed_43",
+      "category": "weight_perturbation",
+      "ground_truth": "unauthorized",
+      "parameter_name": "noise_std",
+      "parameter_value": 0.005,
+      "seed": 43,
+      "prediction_agreement": 0.996,
+      "cosine_similarity": 0.9999566048113393,
+      "kl_divergence": 8.319406974349832e-05,
+      "matching_predictions": 498,
+      "mismatching_predictions": 2,
+      "decisions": {
+        "baseline": {
+          "prediction_pass": true,
+          "cosine_pass": true,
+          "kl_pass": true,
+          "authenticated": true,
+          "decision_outcome": "false_acceptance"
+        },
+        "moderate": {
+          "prediction_pass": true,
+          "cosine_pass": true,
+          "kl_pass": true,
+          "authenticated": true,
+          "decision_outcome": "false_acceptance"
+        },
+        "balanced": {
+          "prediction_pass": true,
+          "cosine_pass": true,
+          "kl_pass": true,
+          "authenticated": true,
+          "decision_outcome": "false_acceptance"
+        },
+        "strict": {
+          "prediction_pass": true,
+          "cosine_pass": true,
+          "kl_pass": true,
+          "authenticated": true,
+          "decision_outcome": "false_acceptance"
+        },
+        "high_sensitivity": {
+          "prediction_pass": true,
+          "cosine_pass": true,
+          "kl_pass": true,
+          "authenticated": true,
+          "decision_outcome": "false_acceptance"
+        },
+        "ultra_sensitive": {
+          "prediction_pass": true,
+          "cosine_pass": true,
+          "kl_pass": false,
+          "authenticated": false,
+          "decision_outcome": "true_rejection"
+        },
+        "zero_tolerance": {
+          "prediction_pass": false,
+          "cosine_pass": true,
+          "kl_pass": false,
+          "authenticated": false,
+          "decision_outcome": "true_rejection"
+        }
+      }
+    },
+    {
+      "variant_id": "perturb_std_0.005_seed_44",
+      "category": "weight_perturbation",
+      "ground_truth": "unauthorized",
+      "parameter_name": "noise_std",
+      "parameter_value": 0.005,
+      "seed": 44,
+      "prediction_agreement": 0.99,
+      "cosine_similarity": 0.9999393046073396,
+      "kl_divergence": 0.00011843622473741703,
+      "matching_predictions": 495,
+      "mismatching_predictions": 5,
+      "decisions": {
+        "baseline": {
+          "prediction_pass": true,
+          "cosine_pass": true,
+          "kl_pass": true,
+          "authenticated": true,
+          "decision_outcome": "false_acceptance"
+        },
+        "moderate": {
+          "prediction_pass": true,
+          "cosine_pass": true,
+          "kl_pass": true,
+          "authenticated": true,
+          "decision_outcome": "false_acceptance"
+        },
+        "balanced": {
+          "prediction_pass": true,
+          "cosine_pass": true,
+          "kl_pass": true,
+          "authenticated": true,
+          "decision_outcome": "false_acceptance"
+        },
+        "strict": {
+          "prediction_pass": true,
+          "cosine_pass": true,
+          "kl_pass": true,
+          "authenticated": true,
+          "decision_outcome": "false_acceptance"
+        },
+        "high_sensitivity": {
+          "prediction_pass": true,
+          "cosine_pass": true,
+          "kl_pass": false,
+          "authenticated": false,
+          "decision_outcome": "true_rejection"
+        },
+        "ultra_sensitive": {
+          "prediction_pass": true,
+          "cosine_pass": true,
+          "kl_pass": false,
+          "authenticated": false,
+          "decision_outcome": "true_rejection"
+        },
+        "zero_tolerance": {
+          "prediction_pass": false,
+          "cosine_pass": true,
+          "kl_pass": false,
+          "authenticated": false,
+          "decision_outcome": "true_rejection"
+        }
+      }
+    },
+    {
+      "variant_id": "perturb_std_0.01_seed_42",
+      "category": "weight_perturbation",
+      "ground_truth": "unauthorized",
+      "parameter_name": "noise_std",
+      "parameter_value": 0.01,
+      "seed": 42,
+      "prediction_agreement": 0.988,
+      "cosine_similarity": 0.999768545052472,
+      "kl_divergence": 0.0004000701194717222,
+      "matching_predictions": 494,
+      "mismatching_predictions": 6,
+      "decisions": {
+        "baseline": {
+          "prediction_pass": true,
+          "cosine_pass": true,
+          "kl_pass": true,
+          "authenticated": true,
+          "decision_outcome": "false_acceptance"
+        },
+        "moderate": {
+          "prediction_pass": true,
+          "cosine_pass": true,
+          "kl_pass": true,
+          "authenticated": true,
+          "decision_outcome": "false_acceptance"
+        },
+        "balanced": {
+          "prediction_pass": true,
+          "cosine_pass": true,
+          "kl_pass": true,
+          "authenticated": true,
+          "decision_outcome": "false_acceptance"
+        },
+        "strict": {
+          "prediction_pass": false,
+          "cosine_pass": true,
+          "kl_pass": true,
+          "authenticated": false,
+          "decision_outcome": "true_rejection"
+        },
+        "high_sensitivity": {
+          "prediction_pass": false,
+          "cosine_pass": true,
+          "kl_pass": false,
+          "authenticated": false,
+          "decision_outcome": "true_rejection"
+        },
+        "ultra_sensitive": {
+          "prediction_pass": false,
+          "cosine_pass": false,
+          "kl_pass": false,
+          "authenticated": false,
+          "decision_outcome": "true_rejection"
+        },
+        "zero_tolerance": {
+          "prediction_pass": false,
+          "cosine_pass": false,
+          "kl_pass": false,
+          "authenticated": false,
+          "decision_outcome": "true_rejection"
+        }
+      }
+    },
+    {
+      "variant_id": "perturb_std_0.01_seed_43",
+      "category": "weight_perturbation",
+      "ground_truth": "unauthorized",
+      "parameter_name": "noise_std",
+      "parameter_value": 0.01,
+      "seed": 43,
+      "prediction_agreement": 0.986,
+      "cosine_similarity": 0.9998268910742838,
+      "kl_divergence": 0.00032759520018639965,
+      "matching_predictions": 493,
+      "mismatching_predictions": 7,
+      "decisions": {
+        "baseline": {
+          "prediction_pass": true,
+          "cosine_pass": true,
+          "kl_pass": true,
+          "authenticated": true,
+          "decision_outcome": "false_acceptance"
+        },
+        "moderate": {
+          "prediction_pass": true,
+          "cosine_pass": true,
+          "kl_pass": true,
+          "authenticated": true,
+          "decision_outcome": "false_acceptance"
+        },
+        "balanced": {
+          "prediction_pass": true,
+          "cosine_pass": true,
+          "kl_pass": true,
+          "authenticated": true,
+          "decision_outcome": "false_acceptance"
+        },
+        "strict": {
+          "prediction_pass": false,
+          "cosine_pass": true,
+          "kl_pass": true,
+          "authenticated": false,
+          "decision_outcome": "true_rejection"
+        },
+        "high_sensitivity": {
+          "prediction_pass": false,
+          "cosine_pass": true,
+          "kl_pass": false,
+          "authenticated": false,
+          "decision_outcome": "true_rejection"
+        },
+        "ultra_sensitive": {
+          "prediction_pass": false,
+          "cosine_pass": false,
+          "kl_pass": false,
+          "authenticated": false,
+          "decision_outcome": "true_rejection"
+        },
+        "zero_tolerance": {
+          "prediction_pass": false,
+          "cosine_pass": false,
+          "kl_pass": false,
+          "authenticated": false,
+          "decision_outcome": "true_rejection"
+        }
+      }
+    },
+    {
+      "variant_id": "perturb_std_0.01_seed_44",
+      "category": "weight_perturbation",
+      "ground_truth": "unauthorized",
+      "parameter_name": "noise_std",
+      "parameter_value": 0.01,
+      "seed": 44,
+      "prediction_agreement": 0.982,
+      "cosine_similarity": 0.9997545529422057,
+      "kl_divergence": 0.000469322046239279,
+      "matching_predictions": 491,
+      "mismatching_predictions": 9,
+      "decisions": {
+        "baseline": {
+          "prediction_pass": true,
+          "cosine_pass": true,
+          "kl_pass": true,
+          "authenticated": true,
+          "decision_outcome": "false_acceptance"
+        },
+        "moderate": {
+          "prediction_pass": true,
+          "cosine_pass": true,
+          "kl_pass": true,
+          "authenticated": true,
+          "decision_outcome": "false_acceptance"
+        },
+        "balanced": {
+          "prediction_pass": true,
+          "cosine_pass": true,
+          "kl_pass": true,
+          "authenticated": true,
+          "decision_outcome": "false_acceptance"
+        },
+        "strict": {
+          "prediction_pass": false,
+          "cosine_pass": true,
+          "kl_pass": true,
+          "authenticated": false,
+          "decision_outcome": "true_rejection"
+        },
+        "high_sensitivity": {
+          "prediction_pass": false,
+          "cosine_pass": true,
+          "kl_pass": false,
+          "authenticated": false,
+          "decision_outcome": "true_rejection"
+        },
+        "ultra_sensitive": {
+          "prediction_pass": false,
+          "cosine_pass": false,
+          "kl_pass": false,
+          "authenticated": false,
+          "decision_outcome": "true_rejection"
+        },
+        "zero_tolerance": {
+          "prediction_pass": false,
+          "cosine_pass": false,
+          "kl_pass": false,
+          "authenticated": false,
+          "decision_outcome": "true_rejection"
+        }
+      }
+    },
+    {
+      "variant_id": "perturb_std_0.02_seed_42",
+      "category": "weight_perturbation",
+      "ground_truth": "unauthorized",
+      "parameter_name": "noise_std",
+      "parameter_value": 0.02,
+      "seed": 42,
+      "prediction_agreement": 0.974,
+      "cosine_similarity": 0.9991420924045737,
+      "kl_divergence": 0.0015894837337259058,
+      "matching_predictions": 487,
+      "mismatching_predictions": 13,
+      "decisions": {
+        "baseline": {
+          "prediction_pass": true,
+          "cosine_pass": true,
+          "kl_pass": true,
+          "authenticated": true,
+          "decision_outcome": "false_acceptance"
+        },
+        "moderate": {
+          "prediction_pass": true,
+          "cosine_pass": true,
+          "kl_pass": true,
+          "authenticated": true,
+          "decision_outcome": "false_acceptance"
+        },
+        "balanced": {
+          "prediction_pass": false,
+          "cosine_pass": true,
+          "kl_pass": true,
+          "authenticated": false,
+          "decision_outcome": "true_rejection"
+        },
+        "strict": {
+          "prediction_pass": false,
+          "cosine_pass": true,
+          "kl_pass": false,
+          "authenticated": false,
+          "decision_outcome": "true_rejection"
+        },
+        "high_sensitivity": {
+          "prediction_pass": false,
+          "cosine_pass": true,
+          "kl_pass": false,
+          "authenticated": false,
+          "decision_outcome": "true_rejection"
+        },
+        "ultra_sensitive": {
+          "prediction_pass": false,
+          "cosine_pass": false,
+          "kl_pass": false,
+          "authenticated": false,
+          "decision_outcome": "true_rejection"
+        },
+        "zero_tolerance": {
+          "prediction_pass": false,
+          "cosine_pass": false,
+          "kl_pass": false,
+          "authenticated": false,
+          "decision_outcome": "true_rejection"
+        }
+      }
+    },
+    {
+      "variant_id": "perturb_std_0.02_seed_43",
+      "category": "weight_perturbation",
+      "ground_truth": "unauthorized",
+      "parameter_name": "noise_std",
+      "parameter_value": 0.02,
+      "seed": 43,
+      "prediction_agreement": 0.974,
+      "cosine_similarity": 0.9993030183043791,
+      "kl_divergence": 0.001302894994989863,
+      "matching_predictions": 487,
+      "mismatching_predictions": 13,
+      "decisions": {
+        "baseline": {
+          "prediction_pass": true,
+          "cosine_pass": true,
+          "kl_pass": true,
+          "authenticated": true,
+          "decision_outcome": "false_acceptance"
+        },
+        "moderate": {
+          "prediction_pass": true,
+          "cosine_pass": true,
+          "kl_pass": true,
+          "authenticated": true,
+          "decision_outcome": "false_acceptance"
+        },
+        "balanced": {
+          "prediction_pass": false,
+          "cosine_pass": true,
+          "kl_pass": true,
+          "authenticated": false,
+          "decision_outcome": "true_rejection"
+        },
+        "strict": {
+          "prediction_pass": false,
+          "cosine_pass": true,
+          "kl_pass": false,
+          "authenticated": false,
+          "decision_outcome": "true_rejection"
+        },
+        "high_sensitivity": {
+          "prediction_pass": false,
+          "cosine_pass": true,
+          "kl_pass": false,
+          "authenticated": false,
+          "decision_outcome": "true_rejection"
+        },
+        "ultra_sensitive": {
+          "prediction_pass": false,
+          "cosine_pass": false,
+          "kl_pass": false,
+          "authenticated": false,
+          "decision_outcome": "true_rejection"
+        },
+        "zero_tolerance": {
+          "prediction_pass": false,
+          "cosine_pass": false,
+          "kl_pass": false,
+          "authenticated": false,
+          "decision_outcome": "true_rejection"
+        }
+      }
+    },
+    {
+      "variant_id": "perturb_std_0.02_seed_44",
+      "category": "weight_perturbation",
+      "ground_truth": "unauthorized",
+      "parameter_name": "noise_std",
+      "parameter_value": 0.02,
+      "seed": 44,
+      "prediction_agreement": 0.966,
+      "cosine_similarity": 0.9991029671302708,
+      "kl_divergence": 0.0017439772700170524,
+      "matching_predictions": 483,
+      "mismatching_predictions": 17,
+      "decisions": {
+        "baseline": {
+          "prediction_pass": true,
+          "cosine_pass": true,
+          "kl_pass": true,
+          "authenticated": true,
+          "decision_outcome": "false_acceptance"
+        },
+        "moderate": {
+          "prediction_pass": true,
+          "cosine_pass": true,
+          "kl_pass": true,
+          "authenticated": true,
+          "decision_outcome": "false_acceptance"
+        },
+        "balanced": {
+          "prediction_pass": false,
+          "cosine_pass": true,
+          "kl_pass": true,
+          "authenticated": false,
+          "decision_outcome": "true_rejection"
+        },
+        "strict": {
+          "prediction_pass": false,
+          "cosine_pass": true,
+          "kl_pass": false,
+          "authenticated": false,
+          "decision_outcome": "true_rejection"
+        },
+        "high_sensitivity": {
+          "prediction_pass": false,
+          "cosine_pass": true,
+          "kl_pass": false,
+          "authenticated": false,
+          "decision_outcome": "true_rejection"
+        },
+        "ultra_sensitive": {
+          "prediction_pass": false,
+          "cosine_pass": false,
+          "kl_pass": false,
+          "authenticated": false,
+          "decision_outcome": "true_rejection"
+        },
+        "zero_tolerance": {
+          "prediction_pass": false,
+          "cosine_pass": false,
+          "kl_pass": false,
+          "authenticated": false,
+          "decision_outcome": "true_rejection"
+        }
+      }
+    },
+    {
+      "variant_id": "perturb_std_0.05_seed_42",
+      "category": "weight_perturbation",
+      "ground_truth": "unauthorized",
+      "parameter_name": "noise_std",
+      "parameter_value": 0.05,
+      "seed": 42,
+      "prediction_agreement": 0.944,
+      "cosine_similarity": 0.9954391970330038,
+      "kl_divergence": 0.009367758120208677,
+      "matching_predictions": 472,
+      "mismatching_predictions": 28,
+      "decisions": {
+        "baseline": {
+          "prediction_pass": true,
+          "cosine_pass": true,
+          "kl_pass": true,
+          "authenticated": true,
+          "decision_outcome": "false_acceptance"
+        },
+        "moderate": {
+          "prediction_pass": false,
+          "cosine_pass": true,
+          "kl_pass": true,
+          "authenticated": false,
+          "decision_outcome": "true_rejection"
+        },
+        "balanced": {
+          "prediction_pass": false,
+          "cosine_pass": true,
+          "kl_pass": true,
+          "authenticated": false,
+          "decision_outcome": "true_rejection"
+        },
+        "strict": {
+          "prediction_pass": false,
+          "cosine_pass": true,
+          "kl_pass": false,
+          "authenticated": false,
+          "decision_outcome": "true_rejection"
+        },
+        "high_sensitivity": {
+          "prediction_pass": false,
+          "cosine_pass": false,
+          "kl_pass": false,
+          "authenticated": false,
+          "decision_outcome": "true_rejection"
+        },
+        "ultra_sensitive": {
+          "prediction_pass": false,
+          "cosine_pass": false,
+          "kl_pass": false,
+          "authenticated": false,
+          "decision_outcome": "true_rejection"
+        },
+        "zero_tolerance": {
+          "prediction_pass": false,
+          "cosine_pass": false,
+          "kl_pass": false,
+          "authenticated": false,
+          "decision_outcome": "true_rejection"
+        }
+      }
+    },
+    {
+      "variant_id": "perturb_std_0.05_seed_43",
+      "category": "weight_perturbation",
+      "ground_truth": "unauthorized",
+      "parameter_name": "noise_std",
+      "parameter_value": 0.05,
+      "seed": 43,
+      "prediction_agreement": 0.95,
+      "cosine_similarity": 0.995781686645817,
+      "kl_divergence": 0.0077455238368024605,
+      "matching_predictions": 475,
+      "mismatching_predictions": 25,
+      "decisions": {
+        "baseline": {
+          "prediction_pass": true,
+          "cosine_pass": true,
+          "kl_pass": true,
+          "authenticated": true,
+          "decision_outcome": "false_acceptance"
+        },
+        "moderate": {
+          "prediction_pass": true,
+          "cosine_pass": true,
+          "kl_pass": true,
+          "authenticated": true,
+          "decision_outcome": "false_acceptance"
+        },
+        "balanced": {
+          "prediction_pass": false,
+          "cosine_pass": true,
+          "kl_pass": true,
+          "authenticated": false,
+          "decision_outcome": "true_rejection"
+        },
+        "strict": {
+          "prediction_pass": false,
+          "cosine_pass": true,
+          "kl_pass": false,
+          "authenticated": false,
+          "decision_outcome": "true_rejection"
+        },
+        "high_sensitivity": {
+          "prediction_pass": false,
+          "cosine_pass": false,
+          "kl_pass": false,
+          "authenticated": false,
+          "decision_outcome": "true_rejection"
+        },
+        "ultra_sensitive": {
+          "prediction_pass": false,
+          "cosine_pass": false,
+          "kl_pass": false,
+          "authenticated": false,
+          "decision_outcome": "true_rejection"
+        },
+        "zero_tolerance": {
+          "prediction_pass": false,
+          "cosine_pass": false,
+          "kl_pass": false,
+          "authenticated": false,
+          "decision_outcome": "true_rejection"
+        }
+      }
+    },
+    {
+      "variant_id": "perturb_std_0.05_seed_44",
+      "category": "weight_perturbation",
+      "ground_truth": "unauthorized",
+      "parameter_name": "noise_std",
+      "parameter_value": 0.05,
+      "seed": 44,
+      "prediction_agreement": 0.928,
+      "cosine_similarity": 0.9950515122238142,
+      "kl_divergence": 0.009677267370538136,
+      "matching_predictions": 464,
+      "mismatching_predictions": 36,
+      "decisions": {
+        "baseline": {
+          "prediction_pass": true,
+          "cosine_pass": true,
+          "kl_pass": true,
+          "authenticated": true,
+          "decision_outcome": "false_acceptance"
+        },
+        "moderate": {
+          "prediction_pass": false,
+          "cosine_pass": true,
+          "kl_pass": true,
+          "authenticated": false,
+          "decision_outcome": "true_rejection"
+        },
+        "balanced": {
+          "prediction_pass": false,
+          "cosine_pass": true,
+          "kl_pass": true,
+          "authenticated": false,
+          "decision_outcome": "true_rejection"
+        },
+        "strict": {
+          "prediction_pass": false,
+          "cosine_pass": true,
+          "kl_pass": false,
+          "authenticated": false,
+          "decision_outcome": "true_rejection"
+        },
+        "high_sensitivity": {
+          "prediction_pass": false,
+          "cosine_pass": false,
+          "kl_pass": false,
+          "authenticated": false,
+          "decision_outcome": "true_rejection"
+        },
+        "ultra_sensitive": {
+          "prediction_pass": false,
+          "cosine_pass": false,
+          "kl_pass": false,
+          "authenticated": false,
+          "decision_outcome": "true_rejection"
+        },
+        "zero_tolerance": {
+          "prediction_pass": false,
+          "cosine_pass": false,
+          "kl_pass": false,
+          "authenticated": false,
+          "decision_outcome": "true_rejection"
+        }
+      }
+    },
+    {
+      "variant_id": "perturb_std_0.1_seed_42",
+      "category": "weight_perturbation",
+      "ground_truth": "unauthorized",
+      "parameter_name": "noise_std",
+      "parameter_value": 0.1,
+      "seed": 42,
+      "prediction_agreement": 0.902,
+      "cosine_similarity": 0.9860135532084885,
+      "kl_divergence": 0.030963940414850722,
+      "matching_predictions": 451,
+      "mismatching_predictions": 49,
+      "decisions": {
+        "baseline": {
+          "prediction_pass": true,
+          "cosine_pass": true,
+          "kl_pass": true,
+          "authenticated": true,
+          "decision_outcome": "false_acceptance"
+        },
+        "moderate": {
+          "prediction_pass": false,
+          "cosine_pass": true,
+          "kl_pass": true,
+          "authenticated": false,
+          "decision_outcome": "true_rejection"
+        },
+        "balanced": {
+          "prediction_pass": false,
+          "cosine_pass": false,
+          "kl_pass": false,
+          "authenticated": false,
+          "decision_outcome": "true_rejection"
+        },
+        "strict": {
+          "prediction_pass": false,
+          "cosine_pass": false,
+          "kl_pass": false,
+          "authenticated": false,
+          "decision_outcome": "true_rejection"
+        },
+        "high_sensitivity": {
+          "prediction_pass": false,
+          "cosine_pass": false,
+          "kl_pass": false,
+          "authenticated": false,
+          "decision_outcome": "true_rejection"
+        },
+        "ultra_sensitive": {
+          "prediction_pass": false,
+          "cosine_pass": false,
+          "kl_pass": false,
+          "authenticated": false,
+          "decision_outcome": "true_rejection"
+        },
+        "zero_tolerance": {
+          "prediction_pass": false,
+          "cosine_pass": false,
+          "kl_pass": false,
+          "authenticated": false,
+          "decision_outcome": "true_rejection"
+        }
+      }
+    },
+    {
+      "variant_id": "perturb_std_0.1_seed_43",
+      "category": "weight_perturbation",
+      "ground_truth": "unauthorized",
+      "parameter_name": "noise_std",
+      "parameter_value": 0.1,
+      "seed": 43,
+      "prediction_agreement": 0.894,
+      "cosine_similarity": 0.9844905346427638,
+      "kl_divergence": 0.02929585127030065,
+      "matching_predictions": 447,
+      "mismatching_predictions": 53,
+      "decisions": {
+        "baseline": {
+          "prediction_pass": true,
+          "cosine_pass": true,
+          "kl_pass": true,
+          "authenticated": true,
+          "decision_outcome": "false_acceptance"
+        },
+        "moderate": {
+          "prediction_pass": false,
+          "cosine_pass": true,
+          "kl_pass": true,
+          "authenticated": false,
+          "decision_outcome": "true_rejection"
+        },
+        "balanced": {
+          "prediction_pass": false,
+          "cosine_pass": false,
+          "kl_pass": false,
+          "authenticated": false,
+          "decision_outcome": "true_rejection"
+        },
+        "strict": {
+          "prediction_pass": false,
+          "cosine_pass": false,
+          "kl_pass": false,
+          "authenticated": false,
+          "decision_outcome": "true_rejection"
+        },
+        "high_sensitivity": {
+          "prediction_pass": false,
+          "cosine_pass": false,
+          "kl_pass": false,
+          "authenticated": false,
+          "decision_outcome": "true_rejection"
+        },
+        "ultra_sensitive": {
+          "prediction_pass": false,
+          "cosine_pass": false,
+          "kl_pass": false,
+          "authenticated": false,
+          "decision_outcome": "true_rejection"
+        },
+        "zero_tolerance": {
+          "prediction_pass": false,
+          "cosine_pass": false,
+          "kl_pass": false,
+          "authenticated": false,
+          "decision_outcome": "true_rejection"
+        }
+      }
+    },
+    {
+      "variant_id": "perturb_std_0.1_seed_44",
+      "category": "weight_perturbation",
+      "ground_truth": "unauthorized",
+      "parameter_name": "noise_std",
+      "parameter_value": 0.1,
+      "seed": 44,
+      "prediction_agreement": 0.858,
+      "cosine_similarity": 0.9793938677611319,
+      "kl_divergence": 0.03867629701817404,
+      "matching_predictions": 429,
+      "mismatching_predictions": 71,
+      "decisions": {
+        "baseline": {
+          "prediction_pass": true,
+          "cosine_pass": true,
+          "kl_pass": true,
+          "authenticated": true,
+          "decision_outcome": "false_acceptance"
+        },
+        "moderate": {
+          "prediction_pass": false,
+          "cosine_pass": true,
+          "kl_pass": true,
+          "authenticated": false,
+          "decision_outcome": "true_rejection"
+        },
+        "balanced": {
+          "prediction_pass": false,
+          "cosine_pass": false,
+          "kl_pass": false,
+          "authenticated": false,
+          "decision_outcome": "true_rejection"
+        },
+        "strict": {
+          "prediction_pass": false,
+          "cosine_pass": false,
+          "kl_pass": false,
+          "authenticated": false,
+          "decision_outcome": "true_rejection"
+        },
+        "high_sensitivity": {
+          "prediction_pass": false,
+          "cosine_pass": false,
+          "kl_pass": false,
+          "authenticated": false,
+          "decision_outcome": "true_rejection"
+        },
+        "ultra_sensitive": {
+          "prediction_pass": false,
+          "cosine_pass": false,
+          "kl_pass": false,
+          "authenticated": false,
+          "decision_outcome": "true_rejection"
+        },
+        "zero_tolerance": {
+          "prediction_pass": false,
+          "cosine_pass": false,
+          "kl_pass": false,
+          "authenticated": false,
+          "decision_outcome": "true_rejection"
+        }
+      }
+    },
+    {
+      "variant_id": "prune_sparsity_0.05",
+      "category": "magnitude_pruning",
+      "ground_truth": "unauthorized",
+      "parameter_name": "sparsity",
+      "parameter_value": 0.05,
+      "seed": null,
+      "prediction_agreement": 0.982,
+      "cosine_similarity": 0.9997882250531394,
+      "kl_divergence": 0.00040080812335443696,
+      "matching_predictions": 491,
+      "mismatching_predictions": 9,
+      "decisions": {
+        "baseline": {
+          "prediction_pass": true,
+          "cosine_pass": true,
+          "kl_pass": true,
+          "authenticated": true,
+          "decision_outcome": "false_acceptance"
+        },
+        "moderate": {
+          "prediction_pass": true,
+          "cosine_pass": true,
+          "kl_pass": true,
+          "authenticated": true,
+          "decision_outcome": "false_acceptance"
+        },
+        "balanced": {
+          "prediction_pass": true,
+          "cosine_pass": true,
+          "kl_pass": true,
+          "authenticated": true,
+          "decision_outcome": "false_acceptance"
+        },
+        "strict": {
+          "prediction_pass": false,
+          "cosine_pass": true,
+          "kl_pass": true,
+          "authenticated": false,
+          "decision_outcome": "true_rejection"
+        },
+        "high_sensitivity": {
+          "prediction_pass": false,
+          "cosine_pass": true,
+          "kl_pass": false,
+          "authenticated": false,
+          "decision_outcome": "true_rejection"
+        },
+        "ultra_sensitive": {
+          "prediction_pass": false,
+          "cosine_pass": false,
+          "kl_pass": false,
+          "authenticated": false,
+          "decision_outcome": "true_rejection"
+        },
+        "zero_tolerance": {
+          "prediction_pass": false,
+          "cosine_pass": false,
+          "kl_pass": false,
+          "authenticated": false,
+          "decision_outcome": "true_rejection"
+        }
+      }
+    },
+    {
+      "variant_id": "prune_sparsity_0.1",
+      "category": "magnitude_pruning",
+      "ground_truth": "unauthorized",
+      "parameter_name": "sparsity",
+      "parameter_value": 0.1,
+      "seed": null,
+      "prediction_agreement": 0.984,
+      "cosine_similarity": 0.9993941335007351,
+      "kl_divergence": 0.0011791580554272835,
+      "matching_predictions": 492,
+      "mismatching_predictions": 8,
+      "decisions": {
+        "baseline": {
+          "prediction_pass": true,
+          "cosine_pass": true,
+          "kl_pass": true,
+          "authenticated": true,
+          "decision_outcome": "false_acceptance"
+        },
+        "moderate": {
+          "prediction_pass": true,
+          "cosine_pass": true,
+          "kl_pass": true,
+          "authenticated": true,
+          "decision_outcome": "false_acceptance"
+        },
+        "balanced": {
+          "prediction_pass": true,
+          "cosine_pass": true,
+          "kl_pass": true,
+          "authenticated": true,
+          "decision_outcome": "false_acceptance"
+        },
+        "strict": {
+          "prediction_pass": false,
+          "cosine_pass": true,
+          "kl_pass": false,
+          "authenticated": false,
+          "decision_outcome": "true_rejection"
+        },
+        "high_sensitivity": {
+          "prediction_pass": false,
+          "cosine_pass": true,
+          "kl_pass": false,
+          "authenticated": false,
+          "decision_outcome": "true_rejection"
+        },
+        "ultra_sensitive": {
+          "prediction_pass": false,
+          "cosine_pass": false,
+          "kl_pass": false,
+          "authenticated": false,
+          "decision_outcome": "true_rejection"
+        },
+        "zero_tolerance": {
+          "prediction_pass": false,
+          "cosine_pass": false,
+          "kl_pass": false,
+          "authenticated": false,
+          "decision_outcome": "true_rejection"
+        }
+      }
+    },
+    {
+      "variant_id": "prune_sparsity_0.2",
+      "category": "magnitude_pruning",
+      "ground_truth": "unauthorized",
+      "parameter_name": "sparsity",
+      "parameter_value": 0.2,
+      "seed": null,
+      "prediction_agreement": 0.924,
+      "cosine_similarity": 0.9911925490901047,
+      "kl_divergence": 0.016588266476926784,
+      "matching_predictions": 462,
+      "mismatching_predictions": 38,
+      "decisions": {
+        "baseline": {
+          "prediction_pass": true,
+          "cosine_pass": true,
+          "kl_pass": true,
+          "authenticated": true,
+          "decision_outcome": "false_acceptance"
+        },
+        "moderate": {
+          "prediction_pass": false,
+          "cosine_pass": true,
+          "kl_pass": true,
+          "authenticated": false,
+          "decision_outcome": "true_rejection"
+        },
+        "balanced": {
+          "prediction_pass": false,
+          "cosine_pass": true,
+          "kl_pass": false,
+          "authenticated": false,
+          "decision_outcome": "true_rejection"
+        },
+        "strict": {
+          "prediction_pass": false,
+          "cosine_pass": true,
+          "kl_pass": false,
+          "authenticated": false,
+          "decision_outcome": "true_rejection"
+        },
+        "high_sensitivity": {
+          "prediction_pass": false,
+          "cosine_pass": false,
+          "kl_pass": false,
+          "authenticated": false,
+          "decision_outcome": "true_rejection"
+        },
+        "ultra_sensitive": {
+          "prediction_pass": false,
+          "cosine_pass": false,
+          "kl_pass": false,
+          "authenticated": false,
+          "decision_outcome": "true_rejection"
+        },
+        "zero_tolerance": {
+          "prediction_pass": false,
+          "cosine_pass": false,
+          "kl_pass": false,
+          "authenticated": false,
+          "decision_outcome": "true_rejection"
+        }
+      }
+    },
+    {
+      "variant_id": "prune_sparsity_0.35",
+      "category": "magnitude_pruning",
+      "ground_truth": "unauthorized",
+      "parameter_name": "sparsity",
+      "parameter_value": 0.35,
+      "seed": null,
+      "prediction_agreement": 0.848,
+      "cosine_similarity": 0.9623904271080551,
+      "kl_divergence": 0.0757559644873501,
+      "matching_predictions": 424,
+      "mismatching_predictions": 76,
+      "decisions": {
+        "baseline": {
+          "prediction_pass": false,
+          "cosine_pass": true,
+          "kl_pass": true,
+          "authenticated": false,
+          "decision_outcome": "true_rejection"
+        },
+        "moderate": {
+          "prediction_pass": false,
+          "cosine_pass": true,
+          "kl_pass": false,
+          "authenticated": false,
+          "decision_outcome": "true_rejection"
+        },
+        "balanced": {
+          "prediction_pass": false,
+          "cosine_pass": false,
+          "kl_pass": false,
+          "authenticated": false,
+          "decision_outcome": "true_rejection"
+        },
+        "strict": {
+          "prediction_pass": false,
+          "cosine_pass": false,
+          "kl_pass": false,
+          "authenticated": false,
+          "decision_outcome": "true_rejection"
+        },
+        "high_sensitivity": {
+          "prediction_pass": false,
+          "cosine_pass": false,
+          "kl_pass": false,
+          "authenticated": false,
+          "decision_outcome": "true_rejection"
+        },
+        "ultra_sensitive": {
+          "prediction_pass": false,
+          "cosine_pass": false,
+          "kl_pass": false,
+          "authenticated": false,
+          "decision_outcome": "true_rejection"
+        },
+        "zero_tolerance": {
+          "prediction_pass": false,
+          "cosine_pass": false,
+          "kl_pass": false,
+          "authenticated": false,
+          "decision_outcome": "true_rejection"
+        }
+      }
+    },
+    {
+      "variant_id": "prune_sparsity_0.5",
+      "category": "magnitude_pruning",
+      "ground_truth": "unauthorized",
+      "parameter_name": "sparsity",
+      "parameter_value": 0.5,
+      "seed": null,
+      "prediction_agreement": 0.712,
+      "cosine_similarity": 0.8978557674953547,
+      "kl_divergence": 0.24160193491660867,
+      "matching_predictions": 356,
+      "mismatching_predictions": 144,
+      "decisions": {
+        "baseline": {
+          "prediction_pass": false,
+          "cosine_pass": false,
+          "kl_pass": false,
+          "authenticated": false,
+          "decision_outcome": "true_rejection"
+        },
+        "moderate": {
+          "prediction_pass": false,
+          "cosine_pass": false,
+          "kl_pass": false,
+          "authenticated": false,
+          "decision_outcome": "true_rejection"
+        },
+        "balanced": {
+          "prediction_pass": false,
+          "cosine_pass": false,
+          "kl_pass": false,
+          "authenticated": false,
+          "decision_outcome": "true_rejection"
+        },
+        "strict": {
+          "prediction_pass": false,
+          "cosine_pass": false,
+          "kl_pass": false,
+          "authenticated": false,
+          "decision_outcome": "true_rejection"
+        },
+        "high_sensitivity": {
+          "prediction_pass": false,
+          "cosine_pass": false,
+          "kl_pass": false,
+          "authenticated": false,
+          "decision_outcome": "true_rejection"
+        },
+        "ultra_sensitive": {
+          "prediction_pass": false,
+          "cosine_pass": false,
+          "kl_pass": false,
+          "authenticated": false,
+          "decision_outcome": "true_rejection"
+        },
+        "zero_tolerance": {
+          "prediction_pass": false,
+          "cosine_pass": false,
+          "kl_pass": false,
+          "authenticated": false,
+          "decision_outcome": "true_rejection"
+        }
+      }
+    },
+    {
+      "variant_id": "prune_sparsity_0.75",
+      "category": "magnitude_pruning",
+      "ground_truth": "unauthorized",
+      "parameter_name": "sparsity",
+      "parameter_value": 0.75,
+      "seed": null,
+      "prediction_agreement": 0.162,
+      "cosine_similarity": 0.543872598318484,
+      "kl_divergence": 1.2652803850726446,
+      "matching_predictions": 81,
+      "mismatching_predictions": 419,
+      "decisions": {
+        "baseline": {
+          "prediction_pass": false,
+          "cosine_pass": false,
+          "kl_pass": false,
+          "authenticated": false,
+          "decision_outcome": "true_rejection"
+        },
+        "moderate": {
+          "prediction_pass": false,
+          "cosine_pass": false,
+          "kl_pass": false,
+          "authenticated": false,
+          "decision_outcome": "true_rejection"
+        },
+        "balanced": {
+          "prediction_pass": false,
+          "cosine_pass": false,
+          "kl_pass": false,
+          "authenticated": false,
+          "decision_outcome": "true_rejection"
+        },
+        "strict": {
+          "prediction_pass": false,
+          "cosine_pass": false,
+          "kl_pass": false,
+          "authenticated": false,
+          "decision_outcome": "true_rejection"
+        },
+        "high_sensitivity": {
+          "prediction_pass": false,
+          "cosine_pass": false,
+          "kl_pass": false,
+          "authenticated": false,
+          "decision_outcome": "true_rejection"
+        },
+        "ultra_sensitive": {
+          "prediction_pass": false,
+          "cosine_pass": false,
+          "kl_pass": false,
+          "authenticated": false,
+          "decision_outcome": "true_rejection"
+        },
+        "zero_tolerance": {
+          "prediction_pass": false,
+          "cosine_pass": false,
+          "kl_pass": false,
+          "authenticated": false,
+          "decision_outcome": "true_rejection"
+        }
+      }
+    }
+  ]
+}
