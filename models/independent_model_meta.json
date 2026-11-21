@@ -1,0 +1,16 @@
+{
+  "model_type": "Independently trained CIFAR10CNN",
+  "training_seed": 808,
+  "optimizer": "Adam",
+  "learning_rate": 0.001,
+  "batch_size": 64,
+  "num_batches_trained": 150,
+  "samples_trained": 9600,
+  "training_time_sec": 31.223,
+  "train_loss": 2.0329,
+  "validation_loss": 1.7812,
+  "validation_accuracy_pct": 35.58,
+  "checkpoint_path": "C:\\Users\\Sanyam Tyagi\\Documents\\College\\AI ML Project\\models\\independent_model.pth",
+  "sha256": "0968779E31B784FAC83841851DBFE396B78952ABBA83D2F602DA183C3A956532",
+  "file_size_bytes": 4473139
+}

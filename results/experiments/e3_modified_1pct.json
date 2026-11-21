@@ -1,0 +1,24 @@
+[
+  {
+    "num_challenges": 100,
+    "prediction_agreement": 0.83,
+    "cosine_similarity": 0.9886504044766602,
+    "kl_divergence": 0.01939222779832662,
+    "cosine_threshold": 0.9,
+    "prediction_threshold": 0.85,
+    "kl_threshold": 0.15,
+    "cosine_pass": true,
+    "prediction_pass": false,
+    "kl_pass": true,
+    "authenticated": false,
+    "matching_predictions": 83,
+    "mismatching_predictions": 17,
+    "validation_status": "VALID",
+    "decision_rule": "all_metrics (baseline)",
+    "model_path": "models\\modified_model_1pct.pth",
+    "model_filename": "modified_model_1pct.pth",
+    "evaluation_time_sec": 0.307,
+    "timestamp": "2026-11-14T14:05:57.690710+00:00",
+    "decision": "REJECTED"
+  }
+]

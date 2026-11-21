@@ -1,0 +1,2 @@
+model_filename,decision,authenticated,prediction_agreement,cosine_similarity,kl_divergence,matching_predictions,mismatching_predictions,num_challenges,prediction_pass,cosine_pass,kl_pass,evaluation_time_sec,timestamp,model_path
+exact_copy_model.pth,AUTHENTIC,True,1.0,1.0,0.0,100,0,100,True,True,True,0.241,2026-11-14T14:01:45.967703+00:00,models\exact_copy_model.pth

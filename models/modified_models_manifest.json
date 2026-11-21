@@ -1,0 +1,911 @@
+{
+  "title": "Manifest of Controlled Modified Model Checkpoints (E3\u2013E7)",
+  "source_model": {
+    "path": "C:\\Users\\Sanyam Tyagi\\Documents\\College\\AI ML Project\\models\\original_model.pth",
+    "sha256": "7D142855F376C5D146005085383F648EAE36CC88E0561035EAC6DF906FB37475",
+    "total_parameters": 1116970
+  },
+  "generated_at": "2026-11-14T14:04:26.568444+00:00",
+  "modified_models": [
+    {
+      "checkpoint_filename": "modified_model_1pct.pth",
+      "checkpoint_path": "C:\\Users\\Sanyam Tyagi\\Documents\\College\\AI ML Project\\models\\modified_model_1pct.pth",
+      "target_fraction": 0.01,
+      "target_percentage": "1.0%",
+      "random_seed": 52,
+      "modification_procedure": {
+        "mask_generation": "Bernoulli trial per weight with p=0.01 using torch.manual_seed(52)",
+        "noise_distribution": "Additive zero-mean Gaussian noise N(0, sigma^2)",
+        "noise_scaling": "sigma = layer_std (standard deviation of the layer's weights)",
+        "source_model": "models/original_model.pth (independent copy)"
+      },
+      "parameters_summary": {
+        "total_model_parameters": 1116970,
+        "total_modified_elements": 11341,
+        "actual_fraction_modified": 0.010153,
+        "actual_percentage_modified": "1.0153%"
+      },
+      "file_info": {
+        "file_size_bytes": 4473175,
+        "sha256": "2663BC227A642E9AF7182C19B0C7FE23B48CCCBFE7681C914314E228AB92DB40",
+        "created_at": "2026-11-14T14:04:26.302192+00:00"
+      },
+      "verification": {
+        "load_successful": true,
+        "architecture_compatible": true,
+        "total_differing_elements": 11341,
+        "matches_expected_modified_count": true,
+        "layer_diff_counts": {
+          "features.0.weight": 8,
+          "features.0.bias": 0,
+          "features.2.weight": 109,
+          "features.2.bias": 1,
+          "features.6.weight": 203,
+          "features.6.bias": 1,
+          "features.8.weight": 374,
+          "features.8.bias": 1,
+          "classifier.1.weight": 10616,
+          "classifier.1.bias": 0,
+          "classifier.4.weight": 28,
+          "classifier.4.bias": 0
+        }
+      },
+      "layer_breakdown": [
+        {
+          "layer_name": "features.0.weight",
+          "shape": [
+            32,
+            3,
+            3,
+            3
+          ],
+          "num_elements": 864,
+          "modified_elements": 8,
+          "layer_fraction_modified": 0.009259,
+          "layer_std": 0.133844
+        },
+        {
+          "layer_name": "features.0.bias",
+          "shape": [
+            32
+          ],
+          "num_elements": 32,
+          "modified_elements": 0,
+          "layer_fraction_modified": 0.0,
+          "layer_std": 0.16296
+        },
+        {
+          "layer_name": "features.2.weight",
+          "shape": [
+            32,
+            32,
+            3,
+            3
+          ],
+          "num_elements": 9216,
+          "modified_elements": 109,
+          "layer_fraction_modified": 0.011827,
+          "layer_std": 0.087134
+        },
+        {
+          "layer_name": "features.2.bias",
+          "shape": [
+            32
+          ],
+          "num_elements": 32,
+          "modified_elements": 1,
+          "layer_fraction_modified": 0.03125,
+          "layer_std": 0.083882
+        },
+        {
+          "layer_name": "features.6.weight",
+          "shape": [
+            64,
+            32,
+            3,
+            3
+          ],
+          "num_elements": 18432,
+          "modified_elements": 203,
+          "layer_fraction_modified": 0.011013,
+          "layer_std": 0.101107
+        },
+        {
+          "layer_name": "features.6.bias",
+          "shape": [
+            64
+          ],
+          "num_elements": 64,
+          "modified_elements": 1,
+          "layer_fraction_modified": 0.015625,
+          "layer_std": 0.107691
+        },
+        {
+          "layer_name": "features.8.weight",
+          "shape": [
+            64,
+            64,
+            3,
+            3
+          ],
+          "num_elements": 36864,
+          "modified_elements": 374,
+          "layer_fraction_modified": 0.010145,
+          "layer_std": 0.088214
+        },
+        {
+          "layer_name": "features.8.bias",
+          "shape": [
+            64
+          ],
+          "num_elements": 64,
+          "modified_elements": 1,
+          "layer_fraction_modified": 0.015625,
+          "layer_std": 0.087477
+        },
+        {
+          "layer_name": "classifier.1.weight",
+          "shape": [
+            256,
+            4096
+          ],
+          "num_elements": 1048576,
+          "modified_elements": 10616,
+          "layer_fraction_modified": 0.010124,
+          "layer_std": 0.067279
+        },
+        {
+          "layer_name": "classifier.1.bias",
+          "shape": [
+            256
+          ],
+          "num_elements": 256,
+          "modified_elements": 0,
+          "layer_fraction_modified": 0.0,
+          "layer_std": 0.079631
+        },
+        {
+          "layer_name": "classifier.4.weight",
+          "shape": [
+            10,
+            256
+          ],
+          "num_elements": 2560,
+          "modified_elements": 28,
+          "layer_fraction_modified": 0.010937,
+          "layer_std": 0.073393
+        },
+        {
+          "layer_name": "classifier.4.bias",
+          "shape": [
+            10
+          ],
+          "num_elements": 10,
+          "modified_elements": 0,
+          "layer_fraction_modified": 0.0,
+          "layer_std": 0.141974
+        }
+      ]
+    },
+    {
+      "checkpoint_filename": "modified_model_5pct.pth",
+      "checkpoint_path": "C:\\Users\\Sanyam Tyagi\\Documents\\College\\AI ML Project\\models\\modified_model_5pct.pth",
+      "target_fraction": 0.05,
+      "target_percentage": "5.0%",
+      "random_seed": 92,
+      "modification_procedure": {
+        "mask_generation": "Bernoulli trial per weight with p=0.05 using torch.manual_seed(92)",
+        "noise_distribution": "Additive zero-mean Gaussian noise N(0, sigma^2)",
+        "noise_scaling": "sigma = layer_std (standard deviation of the layer's weights)",
+        "source_model": "models/original_model.pth (independent copy)"
+      },
+      "parameters_summary": {
+        "total_model_parameters": 1116970,
+        "total_modified_elements": 56018,
+        "actual_fraction_modified": 0.050152,
+        "actual_percentage_modified": "5.0152%"
+      },
+      "file_info": {
+        "file_size_bytes": 4473175,
+        "sha256": "28CDA56AFFBEA00B2849F796FCAAEC2BF549BF10CBE9D40468865950E823AA3B",
+        "created_at": "2026-11-14T14:04:26.363928+00:00"
+      },
+      "verification": {
+        "load_successful": true,
+        "architecture_compatible": true,
+        "total_differing_elements": 56018,
+        "matches_expected_modified_count": true,
+        "layer_diff_counts": {
+          "features.0.weight": 40,
+          "features.0.bias": 2,
+          "features.2.weight": 468,
+          "features.2.bias": 5,
+          "features.6.weight": 920,
+          "features.6.bias": 3,
+          "features.8.weight": 1793,
+          "features.8.bias": 3,
+          "classifier.1.weight": 52658,
+          "classifier.1.bias": 10,
+          "classifier.4.weight": 116,
+          "classifier.4.bias": 0
+        }
+      },
+      "layer_breakdown": [
+        {
+          "layer_name": "features.0.weight",
+          "shape": [
+            32,
+            3,
+            3,
+            3
+          ],
+          "num_elements": 864,
+          "modified_elements": 40,
+          "layer_fraction_modified": 0.046296,
+          "layer_std": 0.133844
+        },
+        {
+          "layer_name": "features.0.bias",
+          "shape": [
+            32
+          ],
+          "num_elements": 32,
+          "modified_elements": 2,
+          "layer_fraction_modified": 0.0625,
+          "layer_std": 0.16296
+        },
+        {
+          "layer_name": "features.2.weight",
+          "shape": [
+            32,
+            32,
+            3,
+            3
+          ],
+          "num_elements": 9216,
+          "modified_elements": 468,
+          "layer_fraction_modified": 0.050781,
+          "layer_std": 0.087134
+        },
+        {
+          "layer_name": "features.2.bias",
+          "shape": [
+            32
+          ],
+          "num_elements": 32,
+          "modified_elements": 5,
+          "layer_fraction_modified": 0.15625,
+          "layer_std": 0.083882
+        },
+        {
+          "layer_name": "features.6.weight",
+          "shape": [
+            64,
+            32,
+            3,
+            3
+          ],
+          "num_elements": 18432,
+          "modified_elements": 920,
+          "layer_fraction_modified": 0.049913,
+          "layer_std": 0.101107
+        },
+        {
+          "layer_name": "features.6.bias",
+          "shape": [
+            64
+          ],
+          "num_elements": 64,
+          "modified_elements": 3,
+          "layer_fraction_modified": 0.046875,
+          "layer_std": 0.107691
+        },
+        {
+          "layer_name": "features.8.weight",
+          "shape": [
+            64,
+            64,
+            3,
+            3
+          ],
+          "num_elements": 36864,
+          "modified_elements": 1793,
+          "layer_fraction_modified": 0.048638,
+          "layer_std": 0.088214
+        },
+        {
+          "layer_name": "features.8.bias",
+          "shape": [
+            64
+          ],
+          "num_elements": 64,
+          "modified_elements": 3,
+          "layer_fraction_modified": 0.046875,
+          "layer_std": 0.087477
+        },
+        {
+          "layer_name": "classifier.1.weight",
+          "shape": [
+            256,
+            4096
+          ],
+          "num_elements": 1048576,
+          "modified_elements": 52658,
+          "layer_fraction_modified": 0.050219,
+          "layer_std": 0.067279
+        },
+        {
+          "layer_name": "classifier.1.bias",
+          "shape": [
+            256
+          ],
+          "num_elements": 256,
+          "modified_elements": 10,
+          "layer_fraction_modified": 0.039062,
+          "layer_std": 0.079631
+        },
+        {
+          "layer_name": "classifier.4.weight",
+          "shape": [
+            10,
+            256
+          ],
+          "num_elements": 2560,
+          "modified_elements": 116,
+          "layer_fraction_modified": 0.045312,
+          "layer_std": 0.073393
+        },
+        {
+          "layer_name": "classifier.4.bias",
+          "shape": [
+            10
+          ],
+          "num_elements": 10,
+          "modified_elements": 0,
+          "layer_fraction_modified": 0.0,
+          "layer_std": 0.141974
+        }
+      ]
+    },
+    {
+      "checkpoint_filename": "modified_model_10pct.pth",
+      "checkpoint_path": "C:\\Users\\Sanyam Tyagi\\Documents\\College\\AI ML Project\\models\\modified_model_10pct.pth",
+      "target_fraction": 0.1,
+      "target_percentage": "10.0%",
+      "random_seed": 142,
+      "modification_procedure": {
+        "mask_generation": "Bernoulli trial per weight with p=0.1 using torch.manual_seed(142)",
+        "noise_distribution": "Additive zero-mean Gaussian noise N(0, sigma^2)",
+        "noise_scaling": "sigma = layer_std (standard deviation of the layer's weights)",
+        "source_model": "models/original_model.pth (independent copy)"
+      },
+      "parameters_summary": {
+        "total_model_parameters": 1116970,
+        "total_modified_elements": 112279,
+        "actual_fraction_modified": 0.100521,
+        "actual_percentage_modified": "10.0521%"
+      },
+      "file_info": {
+        "file_size_bytes": 4473193,
+        "sha256": "3DF6FC2798A36F7BFB55DC7619D664E4E78912DC2BC0ADA1701848EAF342BBB8",
+        "created_at": "2026-11-14T14:04:26.425967+00:00"
+      },
+      "verification": {
+        "load_successful": true,
+        "architecture_compatible": true,
+        "total_differing_elements": 112279,
+        "matches_expected_modified_count": true,
+        "layer_diff_counts": {
+          "features.0.weight": 96,
+          "features.0.bias": 3,
+          "features.2.weight": 899,
+          "features.2.bias": 4,
+          "features.6.weight": 1811,
+          "features.6.bias": 6,
+          "features.8.weight": 3777,
+          "features.8.bias": 4,
+          "classifier.1.weight": 105401,
+          "classifier.1.bias": 25,
+          "classifier.4.weight": 252,
+          "classifier.4.bias": 1
+        }
+      },
+      "layer_breakdown": [
+        {
+          "layer_name": "features.0.weight",
+          "shape": [
+            32,
+            3,
+            3,
+            3
+          ],
+          "num_elements": 864,
+          "modified_elements": 96,
+          "layer_fraction_modified": 0.111111,
+          "layer_std": 0.133844
+        },
+        {
+          "layer_name": "features.0.bias",
+          "shape": [
+            32
+          ],
+          "num_elements": 32,
+          "modified_elements": 3,
+          "layer_fraction_modified": 0.09375,
+          "layer_std": 0.16296
+        },
+        {
+          "layer_name": "features.2.weight",
+          "shape": [
+            32,
+            32,
+            3,
+            3
+          ],
+          "num_elements": 9216,
+          "modified_elements": 899,
+          "layer_fraction_modified": 0.097548,
+          "layer_std": 0.087134
+        },
+        {
+          "layer_name": "features.2.bias",
+          "shape": [
+            32
+          ],
+          "num_elements": 32,
+          "modified_elements": 4,
+          "layer_fraction_modified": 0.125,
+          "layer_std": 0.083882
+        },
+        {
+          "layer_name": "features.6.weight",
+          "shape": [
+            64,
+            32,
+            3,
+            3
+          ],
+          "num_elements": 18432,
+          "modified_elements": 1811,
+          "layer_fraction_modified": 0.098253,
+          "layer_std": 0.101107
+        },
+        {
+          "layer_name": "features.6.bias",
+          "shape": [
+            64
+          ],
+          "num_elements": 64,
+          "modified_elements": 6,
+          "layer_fraction_modified": 0.09375,
+          "layer_std": 0.107691
+        },
+        {
+          "layer_name": "features.8.weight",
+          "shape": [
+            64,
+            64,
+            3,
+            3
+          ],
+          "num_elements": 36864,
+          "modified_elements": 3777,
+          "layer_fraction_modified": 0.102458,
+          "layer_std": 0.088214
+        },
+        {
+          "layer_name": "features.8.bias",
+          "shape": [
+            64
+          ],
+          "num_elements": 64,
+          "modified_elements": 4,
+          "layer_fraction_modified": 0.0625,
+          "layer_std": 0.087477
+        },
+        {
+          "layer_name": "classifier.1.weight",
+          "shape": [
+            256,
+            4096
+          ],
+          "num_elements": 1048576,
+          "modified_elements": 105401,
+          "layer_fraction_modified": 0.100518,
+          "layer_std": 0.067279
+        },
+        {
+          "layer_name": "classifier.1.bias",
+          "shape": [
+            256
+          ],
+          "num_elements": 256,
+          "modified_elements": 25,
+          "layer_fraction_modified": 0.097656,
+          "layer_std": 0.079631
+        },
+        {
+          "layer_name": "classifier.4.weight",
+          "shape": [
+            10,
+            256
+          ],
+          "num_elements": 2560,
+          "modified_elements": 252,
+          "layer_fraction_modified": 0.098437,
+          "layer_std": 0.073393
+        },
+        {
+          "layer_name": "classifier.4.bias",
+          "shape": [
+            10
+          ],
+          "num_elements": 10,
+          "modified_elements": 1,
+          "layer_fraction_modified": 0.1,
+          "layer_std": 0.141974
+        }
+      ]
+    },
+    {
+      "checkpoint_filename": "modified_model_25pct.pth",
+      "checkpoint_path": "C:\\Users\\Sanyam Tyagi\\Documents\\College\\AI ML Project\\models\\modified_model_25pct.pth",
+      "target_fraction": 0.25,
+      "target_percentage": "25.0%",
+      "random_seed": 292,
+      "modification_procedure": {
+        "mask_generation": "Bernoulli trial per weight with p=0.25 using torch.manual_seed(292)",
+        "noise_distribution": "Additive zero-mean Gaussian noise N(0, sigma^2)",
+        "noise_scaling": "sigma = layer_std (standard deviation of the layer's weights)",
+        "source_model": "models/original_model.pth (independent copy)"
+      },
+      "parameters_summary": {
+        "total_model_parameters": 1116970,
+        "total_modified_elements": 278833,
+        "actual_fraction_modified": 0.249633,
+        "actual_percentage_modified": "24.9633%"
+      },
+      "file_info": {
+        "file_size_bytes": 4473193,
+        "sha256": "5965C8598C264E7BDF384BA0F82A02C403FCBC9D268F80BBCB5CAF9FC2D29417",
+        "created_at": "2026-11-14T14:04:26.492659+00:00"
+      },
+      "verification": {
+        "load_successful": true,
+        "architecture_compatible": true,
+        "total_differing_elements": 278833,
+        "matches_expected_modified_count": true,
+        "layer_diff_counts": {
+          "features.0.weight": 222,
+          "features.0.bias": 8,
+          "features.2.weight": 2269,
+          "features.2.bias": 9,
+          "features.6.weight": 4599,
+          "features.6.bias": 15,
+          "features.8.weight": 9270,
+          "features.8.bias": 16,
+          "classifier.1.weight": 261724,
+          "classifier.1.bias": 51,
+          "classifier.4.weight": 647,
+          "classifier.4.bias": 3
+        }
+      },
+      "layer_breakdown": [
+        {
+          "layer_name": "features.0.weight",
+          "shape": [
+            32,
+            3,
+            3,
+            3
+          ],
+          "num_elements": 864,
+          "modified_elements": 222,
+          "layer_fraction_modified": 0.256944,
+          "layer_std": 0.133844
+        },
+        {
+          "layer_name": "features.0.bias",
+          "shape": [
+            32
+          ],
+          "num_elements": 32,
+          "modified_elements": 8,
+          "layer_fraction_modified": 0.25,
+          "layer_std": 0.16296
+        },
+        {
+          "layer_name": "features.2.weight",
+          "shape": [
+            32,
+            32,
+            3,
+            3
+          ],
+          "num_elements": 9216,
+          "modified_elements": 2269,
+          "layer_fraction_modified": 0.246202,
+          "layer_std": 0.087134
+        },
+        {
+          "layer_name": "features.2.bias",
+          "shape": [
+            32
+          ],
+          "num_elements": 32,
+          "modified_elements": 9,
+          "layer_fraction_modified": 0.28125,
+          "layer_std": 0.083882
+        },
+        {
+          "layer_name": "features.6.weight",
+          "shape": [
+            64,
+            32,
+            3,
+            3
+          ],
+          "num_elements": 18432,
+          "modified_elements": 4599,
+          "layer_fraction_modified": 0.249512,
+          "layer_std": 0.101107
+        },
+        {
+          "layer_name": "features.6.bias",
+          "shape": [
+            64
+          ],
+          "num_elements": 64,
+          "modified_elements": 15,
+          "layer_fraction_modified": 0.234375,
+          "layer_std": 0.107691
+        },
+        {
+          "layer_name": "features.8.weight",
+          "shape": [
+            64,
+            64,
+            3,
+            3
+          ],
+          "num_elements": 36864,
+          "modified_elements": 9270,
+          "layer_fraction_modified": 0.251465,
+          "layer_std": 0.088214
+        },
+        {
+          "layer_name": "features.8.bias",
+          "shape": [
+            64
+          ],
+          "num_elements": 64,
+          "modified_elements": 16,
+          "layer_fraction_modified": 0.25,
+          "layer_std": 0.087477
+        },
+        {
+          "layer_name": "classifier.1.weight",
+          "shape": [
+            256,
+            4096
+          ],
+          "num_elements": 1048576,
+          "modified_elements": 261724,
+          "layer_fraction_modified": 0.249599,
+          "layer_std": 0.067279
+        },
+        {
+          "layer_name": "classifier.1.bias",
+          "shape": [
+            256
+          ],
+          "num_elements": 256,
+          "modified_elements": 51,
+          "layer_fraction_modified": 0.199219,
+          "layer_std": 0.079631
+        },
+        {
+          "layer_name": "classifier.4.weight",
+          "shape": [
+            10,
+            256
+          ],
+          "num_elements": 2560,
+          "modified_elements": 647,
+          "layer_fraction_modified": 0.252734,
+          "layer_std": 0.073393
+        },
+        {
+          "layer_name": "classifier.4.bias",
+          "shape": [
+            10
+          ],
+          "num_elements": 10,
+          "modified_elements": 3,
+          "layer_fraction_modified": 0.3,
+          "layer_std": 0.141974
+        }
+      ]
+    },
+    {
+      "checkpoint_filename": "modified_model_50pct.pth",
+      "checkpoint_path": "C:\\Users\\Sanyam Tyagi\\Documents\\College\\AI ML Project\\models\\modified_model_50pct.pth",
+      "target_fraction": 0.5,
+      "target_percentage": "50.0%",
+      "random_seed": 542,
+      "modification_procedure": {
+        "mask_generation": "Bernoulli trial per weight with p=0.5 using torch.manual_seed(542)",
+        "noise_distribution": "Additive zero-mean Gaussian noise N(0, sigma^2)",
+        "noise_scaling": "sigma = layer_std (standard deviation of the layer's weights)",
+        "source_model": "models/original_model.pth (independent copy)"
+      },
+      "parameters_summary": {
+        "total_model_parameters": 1116970,
+        "total_modified_elements": 558610,
+        "actual_fraction_modified": 0.500112,
+        "actual_percentage_modified": "50.0112%"
+      },
+      "file_info": {
+        "file_size_bytes": 4473193,
+        "sha256": "3618204D737B5B3B1EBFA6983A91B57B499B06F0FA5B8B55995B76CF107DD123",
+        "created_at": "2026-11-14T14:04:26.568444+00:00"
+      },
+      "verification": {
+        "load_successful": true,
+        "architecture_compatible": true,
+        "total_differing_elements": 558610,
+        "matches_expected_modified_count": true,
+        "layer_diff_counts": {
+          "features.0.weight": 420,
+          "features.0.bias": 15,
+          "features.2.weight": 4650,
+          "features.2.bias": 14,
+          "features.6.weight": 9145,
+          "features.6.bias": 30,
+          "features.8.weight": 18395,
+          "features.8.bias": 35,
+          "classifier.1.weight": 524511,
+          "classifier.1.bias": 119,
+          "classifier.4.weight": 1271,
+          "classifier.4.bias": 5
+        }
+      },
+      "layer_breakdown": [
+        {
+          "layer_name": "features.0.weight",
+          "shape": [
+            32,
+            3,
+            3,
+            3
+          ],
+          "num_elements": 864,
+          "modified_elements": 420,
+          "layer_fraction_modified": 0.486111,
+          "layer_std": 0.133844
+        },
+        {
+          "layer_name": "features.0.bias",
+          "shape": [
+            32
+          ],
+          "num_elements": 32,
+          "modified_elements": 15,
+          "layer_fraction_modified": 0.46875,
+          "layer_std": 0.16296
+        },
+        {
+          "layer_name": "features.2.weight",
+          "shape": [
+            32,
+            32,
+            3,
+            3
+          ],
+          "num_elements": 9216,
+          "modified_elements": 4650,
+          "layer_fraction_modified": 0.504557,
+          "layer_std": 0.087134
+        },
+        {
+          "layer_name": "features.2.bias",
+          "shape": [
+            32
+          ],
+          "num_elements": 32,
+          "modified_elements": 14,
+          "layer_fraction_modified": 0.4375,
+          "layer_std": 0.083882
+        },
+        {
+          "layer_name": "features.6.weight",
+          "shape": [
+            64,
+            32,
+            3,
+            3
+          ],
+          "num_elements": 18432,
+          "modified_elements": 9145,
+          "layer_fraction_modified": 0.496148,
+          "layer_std": 0.101107
+        },
+        {
+          "layer_name": "features.6.bias",
+          "shape": [
+            64
+          ],
+          "num_elements": 64,
+          "modified_elements": 30,
+          "layer_fraction_modified": 0.46875,
+          "layer_std": 0.107691
+        },
+        {
+          "layer_name": "features.8.weight",
+          "shape": [
+            64,
+            64,
+            3,
+            3
+          ],
+          "num_elements": 36864,
+          "modified_elements": 18395,
+          "layer_fraction_modified": 0.498996,
+          "layer_std": 0.088214
+        },
+        {
+          "layer_name": "features.8.bias",
+          "shape": [
+            64
+          ],
+          "num_elements": 64,
+          "modified_elements": 35,
+          "layer_fraction_modified": 0.546875,
+          "layer_std": 0.087477
+        },
+        {
+          "layer_name": "classifier.1.weight",
+          "shape": [
+            256,
+            4096
+          ],
+          "num_elements": 1048576,
+          "modified_elements": 524511,
+          "layer_fraction_modified": 0.500213,
+          "layer_std": 0.067279
+        },
+        {
+          "layer_name": "classifier.1.bias",
+          "shape": [
+            256
+          ],
+          "num_elements": 256,
+          "modified_elements": 119,
+          "layer_fraction_modified": 0.464844,
+          "layer_std": 0.079631
+        },
+        {
+          "layer_name": "classifier.4.weight",
+          "shape": [
+            10,
+            256
+          ],
+          "num_elements": 2560,
+          "modified_elements": 1271,
+          "layer_fraction_modified": 0.496484,
+          "layer_std": 0.073393
+        },
+        {
+          "layer_name": "classifier.4.bias",
+          "shape": [
+            10
+          ],
+          "num_elements": 10,
+          "modified_elements": 5,
+          "layer_fraction_modified": 0.5,
+          "layer_std": 0.141974
+        }
+      ]
+    }
+  ]
+}

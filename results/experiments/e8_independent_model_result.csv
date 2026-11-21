@@ -1,0 +1,2 @@
+model_filename,decision,authenticated,prediction_agreement,cosine_similarity,kl_divergence,matching_predictions,mismatching_predictions,num_challenges,prediction_pass,cosine_pass,kl_pass,evaluation_time_sec,timestamp,model_path
+independent_model.pth,REJECTED,False,0.37,0.6877939884291381,0.817743701853839,37,63,100,False,False,False,0.129,2026-11-16T14:43:51.525514+00:00,models\independent_model.pth

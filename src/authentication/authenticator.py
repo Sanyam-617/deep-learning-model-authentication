@@ -409,6 +409,9 @@ class ModelAuthenticator:
         path = Path(fp)
         if not path.exists():
             raise FileNotFoundError(f"Fingerprint file not found at: {path}")
+        if path.suffix == ".pt":
+            import torch
+            return torch.load(path, map_location="cpu", weights_only=False)
         with open(path, "r", encoding="utf-8") as f:
             data = json.load(f)
         return data

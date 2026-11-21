@@ -1,0 +1,10 @@
+experiment_id,model_filename,description,ground_truth_category,decision,confusion_outcome,prediction_agreement,cosine_similarity,kl_divergence,prediction_pass,cosine_pass,kl_pass,evaluation_time_sec
+E1,original_model.pth,Original registered model,genuine,AUTHENTIC,TP (TA),1.0,1.0,0.0,True,True,True,0.163
+E2,exact_copy_model.pth,Exact copy model (re-saved),genuine,AUTHENTIC,TP (TA),1.0,1.0,0.0,True,True,True,0.241
+E3,modified_model_1pct.pth,Modified model (1% weights),impostor,REJECTED,TN (TR),0.83,0.9886504044766602,0.01939222779832662,False,True,True,0.456
+E4,modified_model_5pct.pth,Modified model (5% weights),impostor,REJECTED,TN (TR),0.74,0.9562298823035063,0.08371164487608666,False,True,True,0.226
+E5,modified_model_10pct.pth,Modified model (10% weights),impostor,REJECTED,TN (TR),0.72,0.9006659485244651,0.19022881655332088,False,True,False,0.221
+E6,modified_model_25pct.pth,Modified model (25% weights),impostor,REJECTED,TN (TR),0.43,0.7650596885127514,0.5326433164712011,False,False,False,0.151
+E7,modified_model_50pct.pth,Modified model (50% weights),impostor,REJECTED,TN (TR),0.42,0.5362186138200751,2.0234309047702665,False,False,False,0.192
+E8,independent_model.pth,Independently trained model,impostor,REJECTED,TN (TR),0.37,0.6877939884291381,0.817743701853839,False,False,False,0.129
+E9,random_model.pth,Randomly initialized model,impostor,REJECTED,TN (TR),0.14,0.5453447432711925,1.0979236377700687,False,False,False,0.136

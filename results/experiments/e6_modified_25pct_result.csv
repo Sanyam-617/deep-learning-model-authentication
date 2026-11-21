@@ -1,0 +1,2 @@
+model_filename,decision,authenticated,prediction_agreement,cosine_similarity,kl_divergence,matching_predictions,mismatching_predictions,num_challenges,prediction_pass,cosine_pass,kl_pass,evaluation_time_sec,timestamp,model_path
+modified_model_25pct.pth,REJECTED,False,0.43,0.7650596885127514,0.5326433164712011,43,57,100,False,False,False,0.151,2026-11-16T14:33:56.806421+00:00,models\modified_model_25pct.pth

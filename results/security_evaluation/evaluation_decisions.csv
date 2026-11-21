@@ -1,0 +1,21 @@
+trial_id,label,attack_type,outcome,accepted,prediction_agreement,cosine_similarity,kl_divergence,frozen_threshold,description
+EVAL-G1,genuine,Legitimate Copy,TA,True,1.0,1.0,0.0,0.911,Genuine copy #1 of original model
+EVAL-G2,genuine,Legitimate Copy,TA,True,1.0,1.0,0.0,0.911,Genuine copy #2 of original model
+EVAL-G3,genuine,Legitimate Copy,TA,True,1.0,1.0,0.0,0.911,Genuine copy #3 of original model
+EVAL-G4,genuine,Legitimate Copy,TA,True,1.0,1.0,0.0,0.911,Genuine copy #4 of original model
+EVAL-G5,genuine,Legitimate Copy,TA,True,1.0,1.0,0.0,0.911,Genuine copy #5 of original model
+EVAL-G6,genuine,Legitimate Copy,TA,True,1.0,1.0,0.0,0.911,Genuine copy #6 of original model
+EVAL-I-TRAIN1,impostor,Independent Training,TR,False,0.36,0.6666727225964779,0.8231763597035947,0.911,Independently trained model (seed=9001)
+EVAL-I-TRAIN2,impostor,Independent Training,TR,False,0.31,0.6816020773717628,0.765469027276407,0.911,Independently trained model (seed=9002)
+EVAL-I-RAND1,impostor,Random Initialisation,TR,False,0.07,0.5442836015717512,1.1006530283197398,0.911,Randomly initialised weights (seed=9101)
+EVAL-I-RAND2,impostor,Random Initialisation,TR,False,0.04,0.5425414528730891,1.1019445643026606,0.911,Randomly initialised weights (seed=9102)
+EVAL-I-HEAD1,impostor,Head Replacement,TR,False,0.12,0.5061789848258283,1.1888423621303514,0.911,Classification head reinitialised (seed=9201)
+EVAL-I-HEAD2,impostor,Head Replacement,TR,False,0.01,0.52119105784085,1.1146134897907762,0.911,Classification head reinitialised (seed=9202)
+EVAL-I-PERT0p5,impostor,Weight Perturbation (0.5%),TR,False,0.91,0.9970834007354763,0.005182358287824527,0.911,0.5% weights perturbed (seed=9301)
+EVAL-I-PERT1p0,impostor,Weight Perturbation (1%),TR,False,0.89,0.9883769369688047,0.019324048056091635,0.911,1% weights perturbed (seed=9302)
+EVAL-I-PERT2p0,impostor,Weight Perturbation (2%),TR,False,0.82,0.9795211436948583,0.039069547156101725,0.911,2% weights perturbed (seed=9303)
+EVAL-I-PERT5p0,impostor,Weight Perturbation (5%),TR,False,0.74,0.9378859463928797,0.14527943629053167,0.911,5% weights perturbed (seed=9304)
+EVAL-I-PERT10p0,impostor,Weight Perturbation (10%),TR,False,0.61,0.8809557386023097,0.2728586916780537,0.911,10% weights perturbed (seed=9305)
+EVAL-I-PERT15p0,impostor,Weight Perturbation (15%),TR,False,0.67,0.8689152808963112,0.3130408811419142,0.911,15% weights perturbed (seed=9306)
+EVAL-I-PERT25p0,impostor,Weight Perturbation (25%),TR,False,0.37,0.671757548785993,0.8934035711061096,0.911,25% weights perturbed (seed=9307)
+EVAL-I-PERT50p0,impostor,Weight Perturbation (50%),TR,False,0.3,0.6005659135853955,1.0557046290927632,0.911,50% weights perturbed (seed=9308)

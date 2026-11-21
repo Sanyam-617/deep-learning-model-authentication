@@ -1,0 +1,24 @@
+[
+  {
+    "num_challenges": 100,
+    "prediction_agreement": 0.37,
+    "cosine_similarity": 0.6877939884291381,
+    "kl_divergence": 0.817743701853839,
+    "cosine_threshold": 0.9,
+    "prediction_threshold": 0.85,
+    "kl_threshold": 0.15,
+    "cosine_pass": false,
+    "prediction_pass": false,
+    "kl_pass": false,
+    "authenticated": false,
+    "matching_predictions": 37,
+    "mismatching_predictions": 63,
+    "validation_status": "VALID",
+    "decision_rule": "all_metrics (baseline)",
+    "model_path": "models\\independent_model.pth",
+    "model_filename": "independent_model.pth",
+    "evaluation_time_sec": 0.129,
+    "timestamp": "2026-11-16T14:43:51.525514+00:00",
+    "decision": "REJECTED"
+  }
+]

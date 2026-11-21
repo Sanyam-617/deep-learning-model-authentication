@@ -1,0 +1,2 @@
+model_filename,decision,authenticated,prediction_agreement,cosine_similarity,kl_divergence,matching_predictions,mismatching_predictions,num_challenges,prediction_pass,cosine_pass,kl_pass,evaluation_time_sec,timestamp,model_path
+random_model.pth,REJECTED,False,0.14,0.5453447432711925,1.0979236377700687,14,86,100,False,False,False,0.136,2026-11-16T14:44:07.537862+00:00,models\random_model.pth

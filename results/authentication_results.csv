@@ -1,0 +1,3 @@
+model_filename,decision,authenticated,prediction_agreement,cosine_similarity,kl_divergence,matching_predictions,mismatching_predictions,num_challenges,prediction_pass,cosine_pass,kl_pass,evaluation_time_sec,timestamp,model_path
+original_model.pth,AUTHENTIC,True,1.0,1.0,0.0,100,0,100,True,True,True,0.269,2026-11-16T15:02:12.331423+00:00,models\original_model.pth
+modified_model_1pct.pth,REJECTED,False,0.83,0.9886504044766602,0.01939222779832662,83,17,100,False,True,True,0.24,2026-11-16T15:02:12.579164+00:00,models\modified_model_1pct.pth
